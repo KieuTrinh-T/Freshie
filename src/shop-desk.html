@@ -11,7 +11,7 @@
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="icon" href=" https://img.icons8.com/ios-filled/50/000000/circled-w.png "/>
+    <link rel="icon" href=" https://img.icons8.com/ios-filled/50/000000/circled-w.png " />
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
@@ -31,11 +31,11 @@
         <div class="loader"></div>
     </div>
 
-        <!-- Header Section Begin -->
-        <header>
-            <div id="header"></div>    
-        </header>
-        <!-- Header Section End -->
+    <!-- Header Section Begin -->
+    <header>
+        <div id="header"></div>
+    </header>
+    <!-- Header Section End -->
 
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-option">
@@ -60,36 +60,36 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="row" id="deskProduct" >
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="product__pagination">
-                                <a class="active" href="#">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <span>...</span>
-                                <a href="#">21</a>
+                    <div class="row" id="deskProduct">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="product__pagination">
+                                    <a class="active" href="#">1</a>
+                                    <a href="#">2</a>
+                                    <a href="#">3</a>
+                                    <span>...</span>
+                                    <a href="#">21</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
     <!-- Shop Section End -->
 
-	        <!-- Footer Section Begin -->
-            <footer class="footer">
-                <div id="footer"></div>    
-            </footer>
-            <!-- Footer Section End -->
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div id="footer"></div>
+    </footer>
+    <!-- Footer Section End -->
 
     <script>
         $(function() {
-        $('#header').load('/src/reuseheader.html');
-        $('#footer').load('/src/reusefooter.html');
+            $('#header').load('/src/reuseheader.html');
+            $('#footer').load('/src/reusefooter.html');
         });
-        </script>
+    </script>
 
     <!-- Js Plugins -->
     <script src="../js/jquery-3.3.1.min.js"></script>
@@ -103,15 +103,15 @@
     <script src="../js/owl.carousel.min.js"></script>
     <script src="../js/main.js"></script>
 
-    
+
     <script>
         var XMLHttp = new XMLHttpRequest();
         var html = "";
         var i;
         var uri = "../json/all-product.json";
         let array;
-        XMLHttp.onreadystatechange = function(){
-            if (this.readyState == 4 & this.status == 200){
+        XMLHttp.onreadystatechange = function() {
+            if (this.readyState == 4 & this.status == 200) {
                 array = JSON.parse(this.responseText);
                 myFunction(array);
             }
@@ -119,19 +119,19 @@
         XMLHttp.open("GET", uri, true);
         XMLHttp.send();
 
-        function myFunction(array){
-            for(i = 0; i < array.Desk.length; i++){
+        function myFunction(array) {
+            for (i = 0; i < array.Desk.length; i++) {
                 var sp = array.Desk[i];
-                html += "<div class='col-lg-4 col-md-6 col-sm-6'><div class='product__item'><div class='product__item__pic set-bg' data-setbg="+ sp.prImage + " onClick=detail("+ i + ") ><img style='display: none;' src='" + sp.prImage + "'><ul style='margin-top: 70px;' class='product__hover'><li><a href='#'><img src='/img/icon/heart.png'><span>Yêu thích</span></a></li><li><a href='#'><img src='/img/icon/search.png'><span onClick=detail("+ i +" )>Chi tiết</span></a></li></ul></div><div  class='product__item__text'><h6>"+ sp.prName +"</h6><a href='#' class='add-cart'>+ Thêm vào giỏ hàng</a><div class='rating'><i class='fa fa-star' ></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star-o'></i></div><h5>"+ sp.prPrice + "đ</h5><div class='product__color__select'><label for='pc-4'><input type='radio' id='pc-4'></label><label class='active black' for='pc-5'><input type='radio' id='pc-5'></label><label class='grey' for='pc-6'><input type='radio' id='pc-6'></label></div></div></div></div>"            }
-            document.getElementById("deskProduct").innerHTML = html; 
+                html += "<div class='col-lg-4 col-md-6 col-sm-6'><div class='product__item'><div class='product__item__pic set-bg' data-setbg=" + sp.prImage + " onClick=detail(" + i + ") ><img style='display: none;' src='" + sp.prImage + "'><ul style='margin-top: 70px;' class='product__hover'><li><a href='#'><img src='../img/icon/heart.png'><span>Yêu thích</span></a></li><li><a href='#'><img src='../img/icon/search.png'><span onClick=detail(" + i + " )>Chi tiết</span></a></li></ul></div><div  class='product__item__text'><h6>" + sp.prName + "</h6><a href='#' class='add-cart'>+ Thêm vào giỏ hàng</a><div class='rating'><i class='fa fa-star' ></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star-o'></i></div><h5>" + sp.prPrice + "đ</h5><div class='product__color__select'><label for='pc-4'><input type='radio' id='pc-4'></label><label class='active black' for='pc-5'><input type='radio' id='pc-5'></label><label class='grey' for='pc-6'><input type='radio' id='pc-6'></label></div></div></div></div>"
+            }
+            document.getElementById("deskProduct").innerHTML = html;
         }
 
-        function detail(i){
+        function detail(i) {
             var sp = array.Desk[i];
             localStorage.setItem("data", JSON.stringify(sp));
             location.href = "/src/shop-detail.html";
         }
-
     </script>
 
 </body>
