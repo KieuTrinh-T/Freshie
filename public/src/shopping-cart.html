@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Woody | Giỏ hàng</title>
+
+    <!-- Reuse Header or Footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" href=" https://img.icons8.com/ios-filled/50/000000/circled-w.png "/>
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="../css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="../css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+</head>
+
+<body onload="addCart(), deleteCart(), Increse(), cartTotal(), UpdateCart()">
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header>
+        <div id="header"></div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>Giỏ hàng</h4>
+                        <div class="breadcrumb__links">
+                            <a href="../src/index.html">Trang chủ</a>
+                            <span>Giỏ hàng</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Shopping Cart Section Begin -->
+    <section class="shopping-cart spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="shopping__cart__table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Sản phẩm</th>
+                                    <th>Số lượng</th>
+                                    <th>Số tiền</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody class="cart_product">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="continue__btn">
+                                <a href="../src/shop.html">Tiếp tục mua sắm</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="continue__btn update__btn">
+                                <a href="#"><i class="fa fa-spinner"></i>Tải lại giỏ hàng</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="cart__discount">
+                        <h6>Mã giảm giá</h6>
+                        <form action="#">
+                            <input type="text" placeholder="Nhập mã giảm giá">
+                            <button type="submit">Áp dụng</button>
+                        </form>
+                    </div>
+                    <div class="cart__total">
+                        <h5>Tổng giỏ hàng</h5>
+                        <ul>
+                            <li>Tổng tiền hàng: <span class="cart__total_price">0₫</span></li>
+                            <li>Phí vận chuyển: <span>Miễn phí</span></li>
+                            <li>Tổng thanh toán:<span class="cart__total_price_ship">0₫</span></li>
+                        </ul>
+                        <a href="../src/checkoutorder.html" class="primary-btn">Mua hàng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Shopping Cart Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div id="footer"></div>
+    </footer>
+
+    <!-- Js Plugins -->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <script src="../js/jquery.nicescroll.min.js"></script>
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+    <script src="../js/jquery.countdown.min.js"></script>
+    <script src="../js/jquery.slicknav.js"></script>
+    <script src="../js/mixitup.min.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/main.js"></script>
+
+    <script>
+        $(function() {
+        $('#header').load('../src/reuseheader.html');
+        $('#footer').load('../src/reusefooter.html');
+        });
+        </script>
+
+</body>
+<script>
+    function addCart() {
+        console.log(localStorage.getItem('product'))
+        console.log(localStorage.getItem('productCheckout'))
+        var cartTable = document.querySelector('.cart_product')
+        console.log(cartTable)
+        const item = localStorage.getItem('product')
+        var currentHtml = cartTable.innerHTML;
+        currentHtml += item
+        cartTable.innerHTML = currentHtml
+    }
+    function deleteCart() {
+        var cartItem = document.querySelectorAll('.shopping__cart__table tbody tr')
+        console.log(cartItem)
+        cartTotal()
+        for (var i = 0; i < cartItem.length; i++) {
+            var productT = document.querySelectorAll(".cart__close")
+            productT[i].addEventListener("click", function (event) {
+                var cartdel = event.target
+                var cartProduct = cartdel.parentElement.parentElement
+                cartProduct.remove()
+                cartTotal()
+                if (localStorage.getItem('product') != null) {
+                    var current = localStorage.getItem('product');
+                    htmls = current + htmls;
+                }
+                localStorage.setItem('product', htmls)
+            })
+            // localStorage.removeItem('product')
+            // localStorage.removeItem('productCheckout')
+        }
+
+    }
+
+    function InCrease(element) {
+        var currentQty = parseInt(element.parentElement.querySelector('.qty-input').value)
+        element.parentElement.querySelector('.qty-input').value = currentQty + 1;
+        cartTotal()
+        Checkout()
+    }
+    function DeCrease(element) {
+        var currentQty = parseInt(element.parentElement.querySelector('.qty-input').value)
+        if (currentQty > 1) {
+            element.parentElement.querySelector('.qty-input').value = currentQty - 1;
+        }
+        cartTotal()
+    }
+    function cartTotal() {
+        var cartItem = document.querySelectorAll('.item')
+        console.log(cartItem)
+        var totalCart = 0
+        var total
+        for (var i = 0; i < cartItem.length; i++) {
+            var inputValue = cartItem[i].querySelector('.pro-qty-2 input').value
+            var productPrice = cartItem[i].querySelector('.cart__price').innerHTML
+            console.log(productPrice)
+            total = inputValue * parseFloat(productPrice.slice(0, length - 1).split('.').join(''))
+            console.log(total)
+            totalCart = totalCart + total
+        }
+        var cartTotalSet = document.querySelector('.cart__total_price')
+        cartTotalSet.innerHTML = totalCart.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "₫";
+        var cartTotalSet1 = document.querySelector('.cart__total_price_ship')
+        cartTotalSet1.innerHTML = totalCart.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "₫";
+    }
+    function Checkout() {
+
+        const btn = document.querySelectorAll('.item')
+        console.log(btn)
+        var productImage = product.querySelector('img').src
+        var productName = product.querySelector("H6").innerText
+        var productPrice = product.querySelector("H5").innerText
+        console.log(productName)
+        console.log(productImage)
+        console.log(productPrice)
+    }
+
+
+</script>
+
+</html>

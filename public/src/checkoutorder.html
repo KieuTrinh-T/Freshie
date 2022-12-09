@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Woody | Xác nhận đơn hàng</title>
+
+	<!-- Reuse Header or Footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+		rel="stylesheet">
+	<link rel="icon" href="https://img.icons8.com/ios-filled/50/000000/circled-w.png " />
+
+	<!-- Css Styles -->
+	<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+	<link rel="stylesheet" href="/css/elegant-icons.css" type="text/css">
+	<link rel="stylesheet" href="/css/magnific-popup.css" type="text/css">
+	<link rel="stylesheet" href="/css/nice-select.css" type="text/css">
+	<link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
+	<link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
+	<link rel="stylesheet" href="/css/style.css" type="text/css">
+	<link rel="stylesheet" href="/css/checkout_responsive.css" type="text/css">
+	<link rel="stylesheet" href="/css/checkout.css" type="text/css">
+</head>
+
+<body onload="addCartCheckout(), checkoutTotal()">
+
+
+	<!-- Offcanvas Menu Begin -->
+	<div class="offcanvas-menu-overlay"></div>
+	<div class="offcanvas-menu-wrapper">
+		<div class="offcanvas__option">
+			<div class="offcanvas__links" style="margin-left:30px">
+				<a href="#" style="font-size: 30px;"><strong>W  O  O  D  Y</strong></a>
+			</div>
+		</div>
+		<div class="offcanvas__nav__option">
+			<a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+			<a href="#"><img src="img/icon/user.png" alt=""></a>
+			<a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+		</div>
+		<div id="mobile-menu-wrap"></div>
+	</div>
+	<!-- Offcanvas Menu End -->
+	
+	<!-- Header Section Begin -->
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-3">
+					<div class="header__logo">
+						<a href="./index.html"><img src="img/Woody.png" alt=""></a>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6">
+					<nav class="header__menu mobile-menu">
+						<ul>
+							<li><a href="./index.html">Trang chủ</a></li>
+							<li><a href="./shop.html">Sản phẩm</a>
+								<ul class="dropdown">
+									<li><a href="./shop-bedroom.html">Phòng ngủ</a></li>
+									<li><a href="./shop-bathroom.html">Phòng tắm</a></li>
+									<li><a href="./shop-kitchen.html">Phòng bếp</a></li>
+									<li><a href="./shop-kidroom.html">Phòng trẻ em</a></li>
+									<li><a href="./shop-guestroom.html">Phòng khách</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Bộ sưu tập</a>
+								<ul class="dropdown">
+									<li><a href="./about.html">Nhà hiện đại</a></li>
+									<li><a href="./shop-details.html">Bộ sưu tập theo mùa</a></li>
+									<li><a href="./shopping-cart.html">Bộ sưu tập đặc biệt</a></li>
+								</ul>
+							</li>
+							<li><a href="./blog.html">Thực tế ảo</a>
+								<ul class="dropdown">
+									<li><a href="./about.html">Showroom ảo</a></li>
+									<li><a href="./shop-details.html">Trải nghiệm sản phẩm</a></li>
+								</ul>
+							</li>
+							<li><a href="./about.html">Giới thiệu</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-lg-3 col-md-3">
+					<div class="header__nav__option">
+						<a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+						<a href="#"><img src="img/icon/user.png" alt=""></a>
+						<a href="shopping-cart.html"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+					</div>
+				</div>
+			</div>
+			<div class="canvas__open"><i class="fa fa-bars"></i></div>
+		</div>
+	</header>
+	<!-- Header Section End -->
+	
+	<!-- Breadcrumb Section Begin -->
+	<section class="breadcrumb-option">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="breadcrumb__text">
+						<h4>Xác nhận đơn hàng</h4>
+						<div class="breadcrumb__links">
+							<a href="./shopping-cart.html">Giỏ hàng</a>
+							<span>Đơn hàng</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Breadcrumb Section End -->
+	
+			<!-- Checkout -->
+			<div class="checkout">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="billing">
+								<div class="checkout_title">Thông tin giao hàng</div>
+								<div class="checkout_form_container">
+									<form action="#" id="checkout_form" class="checkout_form">
+										<div class="row">
+											<div class="col-lg-6">
+												<input type="text" id="checkout_name" class="checkout_input" placeholder="Họ" required="required">
+											</div>
+											<div class="col-lg-6">
+												<input type="text" id="checkout_last_name" class="checkout_input" placeholder="Tên" required="required">
+											</div>
+										</div>
+										<div>
+											<input type="email" id="checkout_address" class="checkout_input" placeholder="Email" required="required">
+										</div>
+										<div>
+											<input type="phone" id="checkout_phone" class="checkout_input" placeholder="Số điện thoại" required="required">
+										</div>
+										<div>
+											<select name="checkout_country" id="checkout_country" class="dropdown_item_select checkout_input" require="required">
+												<option>Chọn tỉnh thành</option>
+												<option>Cần Thơ</option>
+												<option>Đà Nẵng</option>
+												<option>Hà Nội</option>
+												<option>Thành phố Hồ Chí Minh</option>
+											</select>
+										</div>
+										<div>
+											<input type="text" id="checkout_address" class="checkout_input" placeholder="Địa chỉ" required="required">
+										</div>
+										<div class="checkout_extra">
+											<div class="payment_options">
+												<div class="checkout_title">Phương thức thanh toán</div>
+												<ul>
+													<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+														<label class="radio_container">
+															<input type="radio" id="radio_2" name="payment_radio" class="payment_radio" checked>
+															<span class="radio_mark"></span>
+															<span class="radio_text">Thanh toán khi giao hàng</span>
+														</label>
+													</li>
+													<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+														<label class="radio_container">
+															<input type="radio" id="radio_1" name="payment_radio" class="payment_radio">
+															<span class="radio_mark"></span>
+															<span class="radio_text">Thanh toán qua ví điện tử</span>
+														</label>
+													</li>
+													<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+														<label class="radio_container">
+															<input type="radio" id="radio_3" name="payment_radio" class="payment_radio">
+															<span class="radio_mark"></span>
+															<span class="radio_text">Thanh toán online</span>
+														</label>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+	
+						<!-- Cart Total -->
+						<div class="col-lg-6 cart_col">
+							<section class="shopping-cart spad">
+								<div class="container">
+									<div class="row">
+										<div class="col-lg-8">
+											<div class="shopping__cart__table">
+												<table>
+													<h3><strong>Đơn hàng của bạn</strong></h3>
+													<tbody class="cart_product_checkout">
+														
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<div>
+								<div class="cart__discount" style="margin-left:15px; margin-right:15px; margin-top: -30px;">
+									<h6>Mã giảm giá</h6>
+									<form action="#">
+										<input type="text" placeholder="Nhập mã giảm giá">
+										<button type="submit">Áp dụng</button>
+									</form>
+								</div>
+							</div>
+							<div class="cart_total">
+								<div class="cart_extra_content cart_extra_total">
+									<div class="checkout_title">Thông tin đơn hàng</div>
+									<ul class="cart_extra_total_list">
+										<li class="d-flex flex-row align-items-center justify-content-start">
+											<div class="cart_extra_total_title">Số lượng</div>
+											<div class="cart_extra_total_value ml-auto CheckoutQuan">1</div>
+										</li>
+										<li class="d-flex flex-row align-items-center justify-content-start">
+											<div class="cart_extra_total_title">Tạm tính</div>
+											<div class="cart_extra_total_value ml-auto checkoutFee">0</div>
+										</li>
+										<li class="d-flex flex-row align-items-center justify-content-start">
+											<div class="cart_extra_total_title">Phí vận chuyển</div>
+											<div class="cart_extra_total_value ml-auto">Miễn phí</div>
+										</li>
+										<li class="d-flex flex-row align-items-center justify-content-start">
+											<div class="cart_extra_total_title">Tổng cộng</div>
+											<div class="cart_extra_total_value ml-auto checkoutTotal">$29.90</div>
+										</li>
+									</ul>
+									<div class="checkout_button trans_200"><a href="/src/shop.html" onclick="Finish()">Hoàn tất thanh toán</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			<!-- Footer Section Begin -->
+			<footer class="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3 col-md-4 col-sm-4">
+							<div class="footer__widget">
+								<h6>Thương hiệu Woody</h6>
+								<div style="margin-right: -100px;" class="row">
+									<div class="col-lg-4">
+										<ul>
+											<li><a href="#">Về chúng tôi</a></li>
+											<li><a href="#">Phòng ngủ</a></li>
+											<li><a href="#">Phòng tắm</a></li>
+											<li><a href="#">Phòng bếp</a></li>
+										</ul>
+									</div>
+									<div class="col-lg-4">
+										<ul>
+											<li><a href="#">Phòng trẻ em</a></li>
+											<li><a href="#">Phòng khách</a></li>
+											<li><a href="#">Văn phòng</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="margin-right: 35px;" class="col-lg-2 col-md-3 col-sm-6">
+							<div class="footer__widget">
+								<h6>Hỗ trợ</h6>
+								<ul>
+									<li><a href="#">Dịch vụ khách hàng</a></li>
+									<li><a href="#">Chăm sóc khách hàng</a></li>
+									<li><a href="#">Đơn hàng</a></li>
+									<li><a href="#">Gửi đánh giá</a></li>
+								</ul>
+							</div>
+						</div>
+						<div style="margin-right: 35px;" class="col-lg-2 col-md-3 col-sm-6">
+							<div class="footer__widget">
+								<h6>Chính sách</h6>
+								<ul>
+									<li><a href="#">Chính sách bảo mật</a></li>
+									<li><a href="#">Chính sách đổi trả</a></li>
+									<li><a href="#">Điều khoản</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6 col-sm-6">
+							<div class="footer__widget">
+								<h6>Tham gia cùng Woody</h6>
+								<div class="footer__newslatter">
+									<p>Trở thành thành viên của Woody để không bỏ lỡ bất kỳ những khuyến mãi nào!</p>
+									<form action="#">
+										<input type="text" placeholder="Nhập email để nhận khuyến mãi">
+										<button type="submit"><span class="icon_mail_alt"></span></button>
+									</form>
+									<div style=" width: 200px; margin-top: 10px; margin-left: 80px;">
+										<a href="#"><img src="img/logo_social_media.png" alt=""></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- Footer Section End -->
+		
+			<!-- Search Begin -->
+			<div class="search-model">
+				<div class="h-100 d-flex align-items-center justify-content-center">
+					<div class="search-close-switch">+</div>
+					<form class="search-model-form">
+						<input type="text" id="search-input" placeholder="Search here.....">
+					</form>
+				</div>
+			</div>
+			<!-- Search End -->
+		<script src="js/main.js"></script>
+		<script>
+			function addCartCheckout(){
+			var cartTable = document.querySelector('.cart_product_checkout')
+			const item = localStorage.getItem('productCheckout')
+			var currentHtml = cartTable.innerHTML;
+			currentHtml+= item
+			cartTable.innerHTML = currentHtml
+		}
+		function checkoutTotal(){
+			var cartItem = document.querySelectorAll('.checkout_item')
+			console.log(cartItem)
+			var totalCart = 0
+			var total
+			for (var i = 0; i<cartItem.length; i++){
+				var productPrice = cartItem[i].querySelector('.checkout_price').innerHTML
+				totalCart = totalCart + parseFloat(productPrice.slice(0, length-1).split('.').join(''))
+			}
+			var CheckQuan = document.querySelector('.CheckoutQuan')
+			var cartTotalSet = document.querySelector('.checkoutTotal')
+			var CheckTotalSet = document.querySelector('.checkoutFee')
+			CheckQuan.innerHTML = cartItem.length
+			CheckTotalSet.innerHTML = totalCart.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "₫";
+			cartTotalSet.innerHTML = totalCart.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "₫";
+		}
+		function Finish(){
+			alert("Đơn hàng của bạn đã đặt thành công!")
+		}
+		</script>
+	</body>
+	</html>

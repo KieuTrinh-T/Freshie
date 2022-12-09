@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Woody | Nhà hiện đại</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" href=" https://img.icons8.com/ios-filled/50/000000/circled-w.png " />
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/styleSignin.css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header>
+        <div id="header"></div>
+    </header>
+    <!-- Header Section End -->
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('/img/collection/modernhouse.jpg'); opacity: 85%; ">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <h1 class="mb-2 bread">Nhà hiện đại</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero">
+            <section class="instagram spad" >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="instagram__pic">
+                                <div class="instagram__pic__item set-bg" data-setbg="/img/collection/modern1.jpg"></div>
+                                <div class="instagram__pic__item set-bg" data-setbg="/img/collection/modern5.jpg"></div>
+                                <div class="instagram__pic__item set-bg" data-setbg="/img/collection/modern3.jpg"></div>
+                                <div class="instagram__pic__item set-bg" data-setbg="/img/collection/modern4.jpg"></div>
+                                <div class="instagram__pic__item set-bg" data-setbg="/img/collection/modern6.jpg"></div>
+                                <div class="instagram__pic__item set-bg" data-setbg="/img/collection/modern2.jpg"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="instagram__text">
+                                <h2>Nhà hiện đại</h2>
+                                <p>Đặt chân đến Ý sẽ thật thiếu sót nếu không dừng chân ghé đến MILAN – “Kinh đô thời trang” thế giới. Và đây cũng chính là khởi nguồn cho những đường nét thiết kế đầy mới lạ mà Woody muốn mang đến thông qua bộ sưu tập này. Hãy cùng đắm chìm vào không gian sống tiện nghi và hiện đại.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </section>
+
+    <!-- Product Section Begin -->
+    <section class="product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12" style="margin-top: 50px;">
+                    <ul class="filter__controls">
+                        <li class="active" data-filter="*">Sản phẩm nổi bật</li>
+                        <li data-filter=".new-arrivals">Sản phẩm mới</li>
+                        <li data-filter=".hot-sales">Khuyến mãi</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row product__filter" id="special">
+            </div>
+        </div>
+    </section>
+    <!-- Product Section End -->
+
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div id="footer"></div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.nice-select.min.js"></script>
+    <script src="/js/jquery.nicescroll.min.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/jquery.countdown.min.js"></script>
+    <script src="/js/jquery.slicknav.js"></script>
+    <script src="/js/mixitup.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    <script>
+        $(function() {
+            $('#header').load('/src/reuseheader.html');
+            $('#footer').load('/src/reusefooter.html');
+        });
+    </script>
+
+<script>
+    var XMLHttp = new XMLHttpRequest();
+    var html = "";
+    var i;
+    var uri = "/json/special-product.json";
+    let array;
+    XMLHttp.onreadystatechange = function(){
+        if (this.readyState == 4 & this.status == 200){
+            array = JSON.parse(this.responseText);
+            myFunction(array);
+        }
+    }
+    XMLHttp.open("GET", uri, true);
+    XMLHttp.send();
+
+    function myFunction(array){
+        for(i = 0; i < array.special.length; i++){
+            var sp = array.special[i];
+            html += '<div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix '+sp.prcharac+'"><div class="product__item '+sp.prClass+'"><div  class="product__item__pic set-bg" data-setbg='+ sp.prImage +' onClick=detail('+ i + ')><img style="display: none;" src='+ sp.prImage +'><span class="label">'+sp.prLabel+'</span><ul style="margin-top: 70px;" class="product__hover"><li><a href="#"><img src="/img/icon/heart.png" alt=""><span>Yêu thích</span></a></li><li><a href="#"><img src="/img/icon/search.png" alt=""><span onClick=detail('+ i + ')>Chi tiết</span></a></li></ul></div><div class="product__item__text"><h6>'+sp.prName+'</h6><a href="#" class="add-cart">+ Add To Cart</a> <div class="rating"><i class="fa fa-star" ></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i></div><h5>'+sp.prPrice+'đ</h5><div class="product__color__select"><label for="pc-22"><input type="radio" id="pc-22"></label><label class="active black" for="pc-23"><input type="radio" id="pc-23"></label><label class="grey" for="pc-24"><input type="radio" id="pc-24"></label></div></div></div></div>'
+        }
+        document.getElementById("special").innerHTML = html; 
+    }
+
+    function detail(i){
+        var sp = array.special[i];
+        localStorage.setItem("data", JSON.stringify(sp));
+        location.href = "/src/shop-detail.html";
+    }
+
+</script>
+
+</body>
+
+</html>
