@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Woody | Chi tiết sản phẩm</title>
+    <title>Freshie | Chi tiết sản phẩm</title>
 
     <!-- Reuse Header or Footer -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -44,14 +44,14 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__details__breadcrumb">
-                            <a href="../src/index.html">Trang chủ</a>
+                            <a href="../index.html">Trang chủ</a>
                             <a href="../src/shop.html">Sản phẩm</a>
                             <span>Chi tiết sản phẩm</span>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-3 col-md-3">
+                    <div class="col-md-2">
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
@@ -74,16 +74,9 @@
                                     </div>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="">
-                                        <img id="pic4_tab" src="">
-                                    </div>
-                                </a>
-                            </li>
                         </ul>
                     </div>
-                    <div class="col-lg-6 col-md-9">
+                    <div class="col-md-4">
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <div class="product__details__pic__item">
@@ -92,7 +85,7 @@
                             </div>
                             <div class="tab-pane" id="tabs-2" role="tabpanel">
                                 <div class="product__details__pic__item">
-                                    <img id="pic2">
+                                    <img id="pic2" src="">
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-3" role="tabpanel">
@@ -100,10 +93,40 @@
                                     <img id="pic3" src="">
                                 </div>
                             </div>
-                            <div class="tab-pane" id="tabs-4" role="tabpanel">
-                                <div class="product__details__pic__item">
-                                    <img id="pic4" src="">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="product__details__text">
+                            <h4 id="name">Tinh chất phục hồi chống lão hóa Estee Lauder Advanced Night Repair Serum Synchronized Multi-Recovery Complex</h4>
+                            <div class="rating">
+                                <span id="rating_pr">5.0</span>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <span id="RvNumber">(3066 đánh giá)</span>
+                                <span id="SoldNumber">Đã bán 4303</span>
+                            </div>
+                            <div class="product_price">
+                                <h4 id="price"><span>1.789.000 đ</span></h4>
+                                <h3 id="origiprice"><span>2.200.000 đ</span></h3>
+                            </div>
+
+                            <p id="des"></p>
+                            <div class="product__details__cart__option">
+                                <div class="quantity">
+                                    <span>Số lượng : </span>
+                                    <input type="number" id="num" oninput="calc()" min="1" max="1000" value="1" />
                                 </div>
+                                <div class="shop">
+                                    <a href="#" class="primary-btn">Thêm vào giỏ hàng</a>
+                                    <a href="#" class="primary-btn">Mua ngay</a>
+                                </div>
+
+                            </div>
+                            <div class="product__details__btns__option">
+                                <a href="#"><i class="fa fa-heart"></i> Thêm vào danh mục yêu thích</a>
                             </div>
                         </div>
                     </div>
@@ -112,41 +135,6 @@
         </div>
         <div class="product__details__content">
             <div class="container">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="product__details__text">
-                            <h4 id="name"></h4>
-                            <div class="rating">
-                                <span id="rating_pr"></span>
-                                <i class="fa fa-star"></i>
-                                <span id="RvNumber"></span>
-                            </div>
-                            <h3 id="price"><span>70.00</span></h3>
-                            <p id="des"></p>
-                            <div class="product__details__cart__option">
-                                <div class="quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" value="1">
-                                    </div>
-                                </div>
-                                <a href="#" class="btn_add_to_cart">Thêm vào giỏ hàng</a>
-                            </div>
-                            <div class="product__details__btns__option">
-                                <a href="#"><i class="fa fa-heart"></i> Thêm vào danh mục yêu thích</a>
-                            </div>
-                            <div class="product__details__last__option">
-                                <h5><span>Đảm bảo thanh toán an toàn</span></h5>
-                                <img style="display: none;" src="https://firebasestorage.googleapis.com/v0/b/woodygroup09.appspot.com/o/ProductWeb%2FGi%C6%B0%E1%BB%9Dng%20%C4%91%C6%A1n%20Hauga4.jpg?alt=media&token=b46cf97c-869f-4c65-9eb8-837eb0070d16" class="ProductImage">
-                                <img src="../img/shop-details/details-payment.png" alt="">
-                                <ul>
-                                    <li> Mã sản phẩm: <span id="code" style="font-weight: 100;"></span></li>
-                                    <li>Thể loại: <span id="type" style="font-weight: 100;"></span></li>
-                                    <li>Tag: <span id="tag" style="font-weight: 100;"></span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__details__tab">
@@ -155,23 +143,41 @@
                                     <a class="nav-link active" data-toggle="tab" href="#tabs-5" role="tab">Thông tin sản phẩm</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a id="RvNumber_tab" class="nav-link" data-toggle="tab" href="#tabs-6" role="tab">
-                                    </a>
+                                    <a id="RvNumber_tab" class="nav-link" data-toggle="tab" href="#tabs-6" role="tab">Mô tả sản phẩm</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#tabs-7" role="tab">Kích thước</a>
+                                    <a class="nav-link" data-toggle="tab" href="#tabs-7" role="tab">Đánh giá chi tiết</a>
                                 </li>
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tabs-5" role="tabpanel">
                                     <div class="product__details__tab__content">
                                         <div class="product__details__tab__content__item">
-                                            <p id="info">
-                                            </p>
+                                            <p id="info">Tinh chất Estee Lauder Advanced Night Repair Synchronized Multi-Recovery Complex serum top 1 thế giới siêu huyết thanh có sức mạnh thần kỳ chống lại tất cả các dấu hiệu lão hóa da.
+                                                <br>Tinh chất số #1 cùng công thức đột phá, cải tiến dành cho tất cả mọi người giúp tăng sức mạnh trẻ hóa, ngăn ngừa mọi dấu hiệu lão hóa và khởi động nhanh sự phục hồi tự nhiên của da từ những tác động
+                                                môi trường hàng ngày. Công nghệ tín hiệu nguồn ChronoluxTM độc quyền từ quy trình lên men các peptide và thành phần dẫn xuất từ thực vật còn giúp làn da gia tăng sự sản sinh collagen tự nhiên, tái tạo tế
+                                                bào mới để làn da săn chắc hơn. Thêm vào đó, thành phần Hyaluronic Acid nồng độ cao giúp khóa ẩm trong 72h, cung cấp đầy đủ độ ẩm cho da, tạo ra môi trường lý tưởng cho quy trình tự phục hồi của da. Chai
+                                                đựng tinh chất mới được tạo thành từ chất liệu thủy tinh tái chế, hình dáng đẹp, hiện đại, sang trọng, dễ dàng nhìn được lượng dung dịch bên trong.</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="tabs-6" role="tabpanel">
+                                    <div class="product__details__tab__content">
+                                        <div class="product__details__tab__content__item">
+                                            <p id="description">Công dụng serum chống lão hoá da Estee Lauder thế hệ mới:
+                                                <ul>
+                                                    <li>Siêu serum chống lão hoá phục hồi da Top 1 thế giới.</li>
+                                                    <li>Tác động trực tiếp vào rãnh nhăn và nếp nhăn</li>
+                                                    <li>Khắc phục triệt để vấn đề khô da, độ ẩm khoá ẩm.</li>
+                                                    <li>Tinh chỉnh làn da, giải quyết vần đề da xỉn màu, tối màu, làm đồng đều màu da.</li>
+                                                    <li>Da mịn màng, tươi mới, trẻ trung, rạng rỡ hơn và đều màu.</li>
+                                                    <li>Kết cấu da mịn hơn, tinh tế hơn và làm tăng đáng kể độ sáng rõ và săn chắc của da.</li>
+                                                </ul>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tabs-7" role="tabpanel">
                                     <div class="product__details__tab__content">
                                         <div class="product__details__tab__content__item">
                                             <div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
@@ -196,7 +202,7 @@
                                                                 </span>
                                                             </div>
                                                             <p class="stext-102 cl6">
-                                                                Chất lượng tốt, mẫu mã đẹp phù hợp với nhà mình. Tuy nhiên, trừ 1 sao vì mua sản phẩm về thích quá nên ngủ nhiều, kết quả ... tăng 1 cân :)
+                                                                Cải thiện da tốt, hiệu quả nhanh, Khả năng thẩm thấu nhanh, Không gây kích ứng da, không nhờn, bết dính da.
                                                             </p>
                                                         </div>
                                                     </div>
@@ -224,16 +230,16 @@
                                                         </div>
                                                     </div>
 
-                                                    <!-- Add review -->
+                                                    <!-- Add review
                                                     <form class="w-full">
                                                         <h5 class="mtext-108 cl2 p-b-7">
                                                             Thêm Nhận Xét
                                                         </h5>
-
+            
                                                         <p class="stext-102 cl6">
                                                             Địa chỉ email của bạn sẽ không bị công khai. Điền đầy đủ *
                                                         </p>
-
+            
                                                         <div class="flex-w flex-m p-t-50 p-b-23">
                                                             <span class="stext-102 cl3 m-r-16">
                                                                 Xếp hạng đánh giá
@@ -249,37 +255,30 @@
                                                                 <input class="dis-none" type="number" name="rating">
                                                             </span>
                                                         </div>
-
+            
                                                         <div class="row p-b-25">
                                                             <div class="col-12 p-b-5">
                                                                 <label class="stext-102 cl3" for="review">Đánh giá của bạn</label>
                                                                 <textarea class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10" id="review" name="review"></textarea>
                                                             </div>
-
+            
                                                             <div class="col-sm-6 p-b-5">
                                                                 <label class="stext-102 cl3" for="name" style="font-family: sans-serif;">Tên của bạn</label>
                                                                 <input class="size-111 bor8 stext-102 cl2 p-lr-20" id="name" type="text" name="name">
                                                             </div>
-
+            
                                                             <div class="col-sm-6 p-b-5">
                                                                 <label class="stext-102 cl3" for="email" style="font-family: sans-serif;"> Địa chỉ Email</label>
                                                                 <input class="size-111 bor8 stext-102 cl2 p-lr-20" id="email" type="text" name="email">
                                                             </div>
                                                         </div>
-
+            
                                                         <button class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10">
                                                             Phản Hồi
                                                         </button>
-                                                    </form>
+                                                    </form> -->
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane" id="tabs-7" role="tabpanel">
-                                    <div class="product__details__tab__content">
-                                        <div class="product__details__tab__content__item">
-                                            <img class="product_pic_size" id="pic_size" src="">
                                         </div>
                                     </div>
                                 </div>
@@ -369,7 +368,7 @@
         function myFunction(array) {
             for (i = 0; i < array.related.length; i++) {
                 var sp = array.related[i];
-                html += '<div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6"><div class="product__item"><div  class="product__item__pic set-bg" data-setbg=' + sp.prImage + ' onClick=detail(' + i + ')><img style="display: none;" src=' + sp.prImage + '><ul style="margin-top: 70px;" class="product__hover"><li><a href="#"><img src="../img/icon/heart.png" alt=""><span>Yêu thích</span></a></li><li><a href="#"><img src="../img/icon/search.png" alt=""><span onClick=detail(' + i + ')>Chi tiết</span></a></li></ul></div><div class="product__item__text"><h6>' + sp.prName + '</h6><a href="#" class="add-cart">+ Add To Cart</a> <div class="rating"><i class="fa fa-star" ></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i></div><h5>' + sp.prPrice + '</h5><div class="product__color__select"><label for="pc-22"><input type="radio" id="pc-22"></label><label class="active black" for="pc-23"><input type="radio" id="pc-23"></label><label class="grey" for="pc-24"><input type="radio" id="pc-24"></label></div></div></div></div>'
+                html += '<div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6"><div class="product__item"><div  class="product__item__pic set-bg" data-setbg=' + sp.prImage + ' onClick=detail(' + i + ')><img style="display: none;" src=' + sp.prImage + '><ul style="margin-top: 70px;" class="product__hover"><li><a href="#"><img src="/img/icon/heart.png" alt=""><span>Yêu thích</span></a></li><li><a href="#"><img src="/img/icon/search.png" alt=""><span onClick=detail(' + i + ')>Chi tiết</span></a></li></ul></div><div class="product__item__text"><h6>' + sp.prName + '</h6><a href="#" class="add-cart">+ Add To Cart</a> <div class="rating"><i class="fa fa-star" ></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i></div><h5>' + sp.prPrice + '</h5><div class="product__color__select"><label for="pc-22"><input type="radio" id="pc-22"></label><label class="active black" for="pc-23"><input type="radio" id="pc-23"></label><label class="grey" for="pc-24"><input type="radio" id="pc-24"></label></div></div></div></div>'
             }
             document.getElementById("related-products").innerHTML = html;
         }
@@ -384,3 +383,4 @@
 </body>
 
 </html>
+1
