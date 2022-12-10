@@ -167,117 +167,136 @@
 		Quantity change
 	--------------------- */
 
-    //Add to cart
-    var cartQuan = 0
-    const cartCountInfo = document.getElementById('cart-count-info');
-    const btn = document.querySelectorAll('.add-cart')
-    const btnAdd = document.querySelectorAll('.primary-btn')
-    btnAdd.forEach(function(a, index) {
-        a.addEventListener("click", function(event) {
-            var btnItem = event.target
-            var product = btnItem.parentElement.parentElement
-            var productImage = product.querySelector(".ProductImage").src
-            var productName = product.querySelector("H4").innerText
-            var productPrice = product.querySelector("H3").innerText
-            var addtr = document.createElement("tr")
-            var addtrCheckout = document.createElement("tr")
-            var cartItem = document.querySelectorAll('.item')
-            var cartCount = parseInt(cartCountInfo.innerText) + 1
-            localStorage.setItem('productCount', cartCount)
-            cartCountInfo.textContent = localStorage.getItem('productCount')
-            for (var i = 0; i < cartItem.length; i++) {
-                var productT = document.querySelectorAll(".title")
-                if (productT[i].innerHTML == productName) {
-                    alert("Sản phẩm đã tồn tại trong giỏ hàng!")
-                    return
-                }
-            }
+    // //Add to cart
+    // var cartQuan = 0
+    // const cartCountInfo = document.getElementById('cart-count-info');
+    // const btn = document.querySelectorAll('.add-cart')
+    // const btnAdd = document.querySelectorAll('.primary-btn')
+    // btnAdd.forEach(function(a, index) {
+    //     a.addEventListener("click", function(event) {
+    //         var btnItem = event.target
+    //         var product = btnItem.parentElement.parentElement
+    //         var productImage = product.querySelector(".ProductImage").src
+    //         var productName = product.querySelector("H4").innerText
+    //         var productPrice = product.querySelector("H3").innerText
+    //         var addtr = document.createElement("tr")
+    //         var addtrCheckout = document.createElement("tr")
+    //         var cartItem = document.querySelectorAll('.item')
+    //         var cartCount = parseInt(cartCountInfo.innerText) + 1
+    //         localStorage.setItem('productCount', cartCount)
+    //         cartCountInfo.textContent = localStorage.getItem('productCount')
+    //         for (var i = 0; i < cartItem.length; i++) {
+    //             var productT = document.querySelectorAll(".title")
+    //             if (productT[i].innerHTML == productName) {
+    //                 alert("Sản phẩm đã tồn tại trong giỏ hàng!")
+    //                 return
+    //             }
+    //         }
 
-            var Checkout = '<tr class="checkout_item"><td><div style="float: left; width: 150px;"><img src="' + productImage + '" alt=""></div></td><td><div style="margin-left: 30px; width: 350px;"><p>Tên sản phẩm: <strong>' + productName + '</strong></p><p>Số lượng: <strong>1</strong></p><p>Giá: <strong class="checkout_price">' + productPrice + '</strong></p></div></td></tr>'
-            addtrCheckout.innerHTML = Checkout
-            let htmlsCheckout = '<tr>' + Checkout + '</tr>'
-            if (localStorage.getItem('productCheckout') != null) {
-                var current = localStorage.getItem('productCheckout');
-                htmlsCheckout = current + htmlsCheckout;
-            }
-            localStorage.setItem('productCheckout', htmlsCheckout)
+    //         var Checkout = '<tr class="checkout_item"><td><div style="float: left; width: 150px;"><img src="' + productImage + '" alt=""></div></td><td><div style="margin-left: 30px; width: 350px;"><p>Tên sản phẩm: <strong>' + productName + '</strong></p><p>Số lượng: <strong>1</strong></p><p>Giá: <strong class="checkout_price">' + productPrice + '</strong></p></div></td></tr>'
+    //         addtrCheckout.innerHTML = Checkout
+    //         let htmlsCheckout = '<tr>' + Checkout + '</tr>'
+    //         if (localStorage.getItem('productCheckout') != null) {
+    //             var current = localStorage.getItem('productCheckout');
+    //             htmlsCheckout = current + htmlsCheckout;
+    //         }
+    //         localStorage.setItem('productCheckout', htmlsCheckout)
 
-            var trContent = '<tr class="item"><td class="product__cart__item"><div class="product__cart__item__pic"><img src="' + productImage + '" alt=""></div><div class="product__cart__item__text"><h6 class="title">' + productName + '</h6><h5 class="productTotal">' + productPrice + '</h5></div></td><td class="quantity__item"><div class="quantity"><div class="pro-qty-2"><span onclick="DeCrease(this)" class="fa fa-angle-left dec qtybtn"></span><input class="qty-input" type="text" value="1"><span onclick="InCrease(this)" class="fa fa-angle-right inc qtybtn"></span></div></div></td><td class="cart__price">' + productPrice + '</td><td class="cart__close"><i class="fa fa-close"></i></td></tr>'
-            addtr.innerHTML = trContent
-            let htmls = '<tr>' + trContent + '</tr>'
-            if (localStorage.getItem('product') != null) {
-                var current = localStorage.getItem('product');
-                htmls = current + htmls;
-            }
-            localStorage.setItem('product', htmls)
-            console.log(localStorage.getItem('product'))
-            console.log(localStorage.getItem('productCheckout'))
-            alert("Đã thêm sản phẩm vào giỏ hàng")
-            cartTotal()
-        })
-    })
-    btn.forEach(function(a, index) {
-        a.addEventListener("click", function(event) {
-            var btnItem = event.target
-            var product = btnItem.parentElement.parentElement
-            var productImage = product.querySelector('img').src
-            var productName = product.querySelector("H6").innerText
-            var productPrice = product.querySelector("H5").innerText
-            var addtr = document.createElement("tr")
-            var addtrCheckout = document.createElement("tr")
-            var cartItem = document.querySelectorAll('.item')
-            var cartCount = parseInt(cartCountInfo.innerText) + 1
-            localStorage.setItem('productCount', cartCount)
-            cartCountInfo.textContent = localStorage.getItem('productCount')
-            for (var i = 0; i < cartItem.length; i++) {
-                var productT = document.querySelectorAll(".title")
-                if (productT[i].innerHTML == productName) {
-                    alert("Sản phẩm đã tồn tại trong giỏ hàng!")
-                    return
-                }
-            }
+    //         var trContent = '<tr class="item"><td class="product__cart__item"><div class="product__cart__item__pic"><img src="' + productImage + '" alt=""></div><div class="product__cart__item__text"><h6 class="title">' + productName + '</h6><h5 class="productTotal">' + productPrice + '</h5></div></td><td class="quantity__item"><div class="quantity"><div class="pro-qty-2"><span onclick="DeCrease(this)" class="fa fa-angle-left dec qtybtn"></span><input class="qty-input" type="text" value="1"><span onclick="InCrease(this)" class="fa fa-angle-right inc qtybtn"></span></div></div></td><td class="cart__price">' + productPrice + '</td><td class="cart__close"><i class="fa fa-close"></i></td></tr>'
+    //         addtr.innerHTML = trContent
+    //         let htmls = '<tr>' + trContent + '</tr>'
+    //         if (localStorage.getItem('product') != null) {
+    //             var current = localStorage.getItem('product');
+    //             htmls = current + htmls;
+    //         }
+    //         localStorage.setItem('product', htmls)
+    //         console.log(localStorage.getItem('product'))
+    //         console.log(localStorage.getItem('productCheckout'))
+    //         alert("Đã thêm sản phẩm vào giỏ hàng")
+    //         cartTotal()
+    //     })
+    // })
+    // btn.forEach(function(a, index) {
+    //     a.addEventListener("click", function(event) {
+    //         var btnItem = event.target
+    //         var product = btnItem.parentElement.parentElement
+    //         var productImage = product.querySelector('img').src
+    //         var productName = product.querySelector("H6").innerText
+    //         var productPrice = product.querySelector("H5").innerText
+    //         var addtr = document.createElement("tr")
+    //         var addtrCheckout = document.createElement("tr")
+    //         var cartItem = document.querySelectorAll('.item')
+    //         var cartCount = parseInt(cartCountInfo.innerText) + 1
+    //         localStorage.setItem('productCount', cartCount)
+    //         cartCountInfo.textContent = localStorage.getItem('productCount')
+    //         for (var i = 0; i < cartItem.length; i++) {
+    //             var productT = document.querySelectorAll(".title")
+    //             if (productT[i].innerHTML == productName) {
+    //                 alert("Sản phẩm đã tồn tại trong giỏ hàng!")
+    //                 return
+    //             }
+    //         }
 
-            var Checkout = '<tr class="checkout_item"><td><div style="float: left; width: 150px;"><img src="' + productImage + '" alt=""></div></td><td><div style="margin-left: 30px; width: 350px;"><p>Tên sản phẩm: <strong>' + productName + '</strong></p><p>Số lượng: <strong>1</strong></p><p>Giá: <strong class="checkout_price">' + productPrice + '</strong></p></div></td></tr>'
-            addtrCheckout.innerHTML = Checkout
-            let htmlsCheckout = '<tr>' + Checkout + '</tr>'
-            if (localStorage.getItem('productCheckout') != null) {
-                var current = localStorage.getItem('productCheckout');
-                htmlsCheckout = current + htmlsCheckout;
-            }
-            localStorage.setItem('productCheckout', htmlsCheckout)
+    //         var Checkout = '<tr class="checkout_item"><td><div style="float: left; width: 150px;"><img src="' + productImage + '" alt=""></div></td><td><div style="margin-left: 30px; width: 350px;"><p>Tên sản phẩm: <strong>' + productName + '</strong></p><p>Số lượng: <strong>1</strong></p><p>Giá: <strong class="checkout_price">' + productPrice + '</strong></p></div></td></tr>'
+    //         addtrCheckout.innerHTML = Checkout
+    //         let htmlsCheckout = '<tr>' + Checkout + '</tr>'
+    //         if (localStorage.getItem('productCheckout') != null) {
+    //             var current = localStorage.getItem('productCheckout');
+    //             htmlsCheckout = current + htmlsCheckout;
+    //         }
+    //         localStorage.setItem('productCheckout', htmlsCheckout)
 
-            var trContent = '<tr class="item"><td class="product__cart__item"><div class="product__cart__item__pic"><img src="' + productImage + '" alt=""></div><div class="product__cart__item__text"><h6 class="title">' + productName + '</h6><h5 class="productTotal">' + productPrice + '</h5></div></td><td class="quantity__item"><div class="quantity"><div class="pro-qty-2"><span onclick="DeCrease(this)" class="fa fa-angle-left dec qtybtn"></span><input class="qty-input" type="text" value="1"><span onclick="InCrease(this)" class="fa fa-angle-right inc qtybtn"></span></div></div></td><td class="cart__price">' + productPrice + '</td><td class="cart__close"><i class="fa fa-close"></i></td></tr>'
-            addtr.innerHTML = trContent
-            let htmls = '<tr>' + trContent + '</tr>'
-            if (localStorage.getItem('product') != null) {
-                var current = localStorage.getItem('product');
-                htmls = current + htmls;
-            }
-            localStorage.setItem('product', htmls)
-            console.log(localStorage.getItem('product'))
-            console.log(localStorage.getItem('productCheckout'))
-            alert("Đã thêm sản phẩm vào giỏ hàng")
-            cartTotal()
-        })
-    })
+    //         var trContent = '<tr class="item"><td class="product__cart__item"><div class="product__cart__item__pic"><img src="' + productImage + '" alt=""></div><div class="product__cart__item__text"><h6 class="title">' + productName + '</h6><h5 class="productTotal">' + productPrice + '</h5></div></td><td class="quantity__item"><div class="quantity"><div class="pro-qty-2"><span onclick="DeCrease(this)" class="fa fa-angle-left dec qtybtn"></span><input class="qty-input" type="text" value="1"><span onclick="InCrease(this)" class="fa fa-angle-right inc qtybtn"></span></div></div></td><td class="cart__price">' + productPrice + '</td><td class="cart__close"><i class="fa fa-close"></i></td></tr>'
+    //         addtr.innerHTML = trContent
+    //         let htmls = '<tr>' + trContent + '</tr>'
+    //         if (localStorage.getItem('product') != null) {
+    //             var current = localStorage.getItem('product');
+    //             htmls = current + htmls;
+    //         }
+    //         localStorage.setItem('product', htmls)
+    //         console.log(localStorage.getItem('product'))
+    //         console.log(localStorage.getItem('productCheckout'))
+    //         alert("Đã thêm sản phẩm vào giỏ hàng")
+    //         cartTotal()
+    //     })
+    // })
 
-    function cartTotal() {
-        var cartItem = document.querySelectorAll('.item')
-        var totalCart = 0
-        var total
-        for (var i = 0; i < cartItem.length; i++) {
-            var inputValue = cartItem[i].querySelector('.pro-qty-2 input').value
-            var productPrice = cartItem[i].querySelector('.cart__price').innerHTML
-            total = inputValue * parseFloat(productPrice)
-            totalCart = totalCart + total
-            console.log(totalCart)
+    // function cartTotal() {
+    //     var cartItem = document.querySelectorAll('.item')
+    //     var totalCart = 0
+    //     var total
+    //     for (var i = 0; i < cartItem.length; i++) {
+    //         var inputValue = cartItem[i].querySelector('.pro-qty-2 input').value
+    //         var productPrice = cartItem[i].querySelector('.cart__price').innerHTML
+    //         total = inputValue * parseFloat(productPrice)
+    //         totalCart = totalCart + total
+    //         console.log(totalCart)
+    //     }
+    //     var cartTotalSet = document.querySelector('.cart__total_price')
+    //     console.log(cartTotalSet)
+    //     cartTotalSet.innerHTML = totalCart.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "₫";
+    //     var cartTotalSet1 = document.querySelector('.cart__total_price_ship')
+    //     cartTotalSet1.innerHTML = totalCart.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "₫";
+    // }
+
+
+
+    /*------------------
+    Add  to cart
+    --------------------*/
+    $('.btn_add_to_cart').on('click', function() {
+        var item = localStorage.getItem('data');
+        var item = JSON.parse(item);
+        alert("Đã thêm sản phẩm vào giỏ hàng " + item.prID);
+        var cartArray = new Array();
+        if (localStorage.getItem('cart') != null) {
+            cartArray = JSON.parse(localStorage.getItem('cart'));
         }
-        var cartTotalSet = document.querySelector('.cart__total_price')
-        console.log(cartTotalSet)
-        cartTotalSet.innerHTML = totalCart.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "₫";
-        var cartTotalSet1 = document.querySelector('.cart__total_price_ship')
-        cartTotalSet1.innerHTML = totalCart.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "₫";
-    }
+        cartArray.push(item, quantity);
+        localStorage.setItem('cart', JSON.stringify(cartArray));
+        localStorage.clear('cart');
+
+    });
 
 
     /*------------------
