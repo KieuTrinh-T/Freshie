@@ -4437,3 +4437,13 @@ ol {
 .shop.shop-detail {
     margin-top: 20px;
 }
+
+/* BRAND */
+
+.brand_name h2 {
+    color: #850026;
+    text-align: center;
+    font-size: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
