@@ -4402,6 +4402,10 @@
                 background: #f3f2ee;
                 margin-bottom: 5px;
             }
+            
+            .shop.btn {
+                margin-top: 20px;
+            }
             /*-------Product item--------*/
             
             .product__item__pic img {
