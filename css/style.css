@@ -109,6 +109,8 @@ ol {
     background-position: top center;
 }
 
+
+
 .spad {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -4432,9 +4434,14 @@ ol {
     color: #ffffff;
 }
 
+/*-------- index.html ----------*/
+.hero__items.set-bg{
+    background-size: auto;
+
+
+
 
 /* <!----SHOP-DETAIL----> */
 
 .shop.shop-detail {
     margin-top: 20px;
-}
