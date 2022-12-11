@@ -39,8 +39,8 @@
 
     <!-- Shop Details Section Begin -->
     <section class="shop-details">
-        <div class="product__details__pic">
-            <div class="container">
+        <div class="product__details__pic shop-detail">
+            <div class=" shop-detail">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__details__breadcrumb">
@@ -76,7 +76,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <div class="product__details__pic__item">
@@ -95,7 +95,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         <div class="product__details__text">
                             <h4 id="name"> Đèn bàn</h4>
                             <div class="rating">
@@ -134,7 +134,7 @@
             </div>
         </div>
         <div class="product__details__content">
-            <div class="container shop-detail">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__details__tab">
@@ -165,14 +165,7 @@
                                     <div class="product__details__tab__content">
                                         <div class="product__details__tab__content__item">
                                             <p id="description">Công dụng serum chống lão hoá da Estee Lauder thế hệ mới:
-                                                <ul>
-                                                    <li>Siêu serum chống lão hoá phục hồi da Top 1 thế giới.</li>
-                                                    <li>Tác động trực tiếp vào rãnh nhăn và nếp nhăn</li>
-                                                    <li>Khắc phục triệt để vấn đề khô da, độ ẩm khoá ẩm.</li>
-                                                    <li>Tinh chỉnh làn da, giải quyết vần đề da xỉn màu, tối màu, làm đồng đều màu da.</li>
-                                                    <li>Da mịn màng, tươi mới, trẻ trung, rạng rỡ hơn và đều màu.</li>
-                                                    <li>Kết cấu da mịn hơn, tinh tế hơn và làm tăng đáng kể độ sáng rõ và săn chắc của da.</li>
-                                                </ul>
+
                                             </p>
                                         </div>
                                     </div>
@@ -313,20 +306,20 @@
     <!-- Footer Section End -->
     <script>
         var sp = JSON.parse(localStorage.getItem("data"));
-        document.getElementById("image").src = sp.prImage;
+        document.getElementById("image").src = "../img/product/" + sp.prImage;
         document.getElementById("price").innerHTML = sp.prPrice + "đ";
         document.getElementById("origiprice").innerHTML = sp.prPrice + "đ";
         document.getElementById("name").innerHTML = sp.prName;
-        document.getElementById("image_tab").src = sp.prImage;
-        document.getElementById("pic2").src = sp.prPic2;
-        document.getElementById("pic2_tab").src = sp.prPic2;
-        document.getElementById("pic3").src = sp.prPic3;
-        document.getElementById("pic3_tab").src = sp.prPic3;
+        document.getElementById("image_tab").src = "../img/product/" + sp.prImage;
+        document.getElementById("pic2").src = "../img/product/" + sp.prPic1;
+        document.getElementById("pic2_tab").src = "../img/product/" + sp.prPic1;
+        document.getElementById("pic3").src = "../img/product/" + sp.prPic2;
+        document.getElementById("pic3_tab").src = "../img/product/" + sp.prPic2;
         document.getElementById("rating_pr").innerHTML = sp.prRating;
         // document.getElementById("code").innerHTML = sp.prCode;
         // document.getElementById("type").innerHTML = sp.prType;
         // document.getElementById("tag").innerHTML = sp.prTag;
-        document.getElementById("des").innerHTML = sp.prDescription;
+        document.getElementById("description").innerHTML = sp.prDescription;
         document.getElementById("info").innerHTML = sp.prInfo;
         document.getElementById("RvNumber").innerHTML = " - " + sp.prRvNumber + " đánh giá";
         document.getElementById("RvNumber_tab").innerHTML = "Đánh giá của khách hàng (" + sp.prRvNumber + ")";
