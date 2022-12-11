@@ -616,8 +616,7 @@ ol {
 }
 
 .hero__items {
-    height: 800px;
-    padding-top: 230px;
+    height: 624px;
 }
 
 .hero__text h6 {
@@ -4367,8 +4366,6 @@ ol {
     }
     .hero__items {
         height: auto;
-        padding-top: 130px;
-        padding-bottom: 40px;
     }
     .hero__text h2 {
         font-size: 36px;
@@ -4434,5 +4431,4 @@ ol {
 /*-------- index.html ----------*/
 .hero__items.set-bg{
     background-size: auto;
-
 }
