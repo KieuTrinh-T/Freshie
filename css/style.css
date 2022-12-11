@@ -603,11 +603,6 @@
                 right: 75px;
             }
             
-            .hero__items {
-                height: 800px;
-                padding-top: 230px;
-            }
-            
             .hero__text h6 {
                 color: #e53637;
                 font-size: 14px;
@@ -4388,7 +4383,9 @@
             /*-------- index.html ----------*/
             
             .hero__items.set-bg {
-                background-size: auto;
+                background-size: contain;
+                height: 90vh;
+                width: 90wh;
             }
             /* <!----SHOP-DETAIL----> */
             
