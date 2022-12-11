@@ -51,7 +51,10 @@
                             <h2>GUCCI</h2>
                         </div>
                         <div class="brand_des">
-                            <p>Gucci là một cái tên được xếp hàng rất cao trong làng thời trang thế giới, được thành lập vào năm 1921 ở Firenze (Ý) bởi Guccio Gucci. Gucci được truyền cảm hứng từ những rương đồ sang trọng bằng da của khách du lịch đến nghỉ dưỡng tại khách sạn Savoy, nơi làm việc lúc bấy giờ của ông tại London, để trở về Ý và bắt đầu với nghệ thuật chế tác đồ da trứ danh nơi đất nước hình chiếc ủng. Sự ly kỳ trong mối quan hệ giữa Guccio Gucci và các con trai đã được dựng thành phim với nhiều câu chuyện bên lề khác nhau, thế nhưng gia đình Gucci đã làm tốt công việc của mình, khi đưa thương hiệu này chiếm một vị trí quan trọn trong giới thời trang, bằng những sản phẩm đồ da xa xỉ có chất lượng tuyệt hảo được gắn logo "double G" trứ danh của nhà Gucci.</p>
+                            <p>Gucci là một cái tên được xếp hàng rất cao trong làng thời trang thế giới, được thành lập vào năm 1921 ở Firenze (Ý) bởi Guccio Gucci. Gucci được truyền cảm hứng từ những rương đồ sang trọng bằng da của khách du lịch đến nghỉ
+                                dưỡng tại khách sạn Savoy, nơi làm việc lúc bấy giờ của ông tại London, để trở về Ý và bắt đầu với nghệ thuật chế tác đồ da trứ danh nơi đất nước hình chiếc ủng. Sự ly kỳ trong mối quan hệ giữa Guccio Gucci và các con trai
+                                đã được dựng thành phim với nhiều câu chuyện bên lề khác nhau, thế nhưng gia đình Gucci đã làm tốt công việc của mình, khi đưa thương hiệu này chiếm một vị trí quan trọn trong giới thời trang, bằng những sản phẩm đồ da
+                                xa xỉ có chất lượng tuyệt hảo được gắn logo "double G" trứ danh của nhà Gucci.</p>
                         </div>
                     </div>
                 </div>
@@ -103,36 +106,37 @@
         });
     </script>
 
-<script>
-    var XMLHttp = new XMLHttpRequest();
-    var html = "";
-    var i;
-    var uri = "../json/special-product.json";
-    let array;
-    XMLHttp.onreadystatechange = function(){
-        if (this.readyState == 4 & this.status == 200){
-            array = JSON.parse(this.responseText);
-            myFunction(array);
+    <script>
+        var XMLHttp = new XMLHttpRequest();
+        var html = "";
+        var i;
+        var uri = "../json/special-product.json";
+        let array;
+        XMLHttp.onreadystatechange = function() {
+            if (this.readyState == 4 & this.status == 200) {
+                array = JSON.parse(this.responseText);
+                myFunction(array);
+            }
         }
-    }
-    XMLHttp.open("GET", uri, true);
-    XMLHttp.send();
+        XMLHttp.open("GET", uri, true);
+        XMLHttp.send();
 
-    function myFunction(array){
-        for(i = 0; i < array.special.length; i++){
+        function myFunction(array) {
+            alert(array.Gucci.length);
+
+            for (i = 0; i < array.Gucci.length; i++) {
+                var sp = array.Gucci[i];
+                html += "<div class='col-lg-4 col-md-6 col-sm-6'><div class='product__item'><div class='product__item__pic set-bg' data-setbg='../img/product/" + sp.prImage + "' onClick=detail(" + i + ") ><img style='display: block;' src='../img/product/" + sp.prImage + "'><ul style='margin-top: 70px;' class='product__hover'><li><a href='#'><img src='../img/icon/heart.png'><span>Yêu thích</span></a></li><li><a href='#'><img src='../img/icon/search.png'><span onClick=detail('+ i + ')>Chi tiết</span></a></li></ul></div><div  class='product__item__text'><h6>" + sp.prName + "</h6><a href='#' class='add-cart'>+ Thêm vào giỏ hàng</a><div class='rating'><i class='fa fa-star' ></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star-o'></i></div><h5>" + sp.prPrice + "đ</h5><div class='product__color__select'><label for='pc-4'><input type='radio' id='pc-4'></label><label class='active black' for='pc-5'><input type='radio' id='pc-5'></label><label class='grey' for='pc-6'><input type='radio' id='pc-6'></label></div></div></div></div>"
+            }
+            document.getElementById("special").innerHTML = html;
+        }
+
+        function detail(i) {
             var sp = array.special[i];
-            html += '<div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix '+sp.prcharac+'"><div class="product__item '+sp.prClass+'"><div  class="product__item__pic set-bg" data-setbg='+ sp.prImage +' onClick=detail('+ i + ')><img style="display: none;" src='+ sp.prImage +'><span class="label">'+sp.prLabel+'</span><ul style="margin-top: 70px;" class="product__hover"><li><a href="#"><img src="/img/icon/heart.png" alt=""><span>Yêu thích</span></a></li><li><a href="#"><img src="/img/icon/search.png" alt=""><span onClick=detail('+ i + ')>Chi tiết</span></a></li></ul></div><div class="product__item__text"><h6>'+sp.prName+'</h6><a href="#" class="add-cart">+ Add To Cart</a> <div class="rating"><i class="fa fa-star" ></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i></div><h5>'+sp.prPrice+'đ</h5><div class="product__color__select"><label for="pc-22"><input type="radio" id="pc-22"></label><label class="active black" for="pc-23"><input type="radio" id="pc-23"></label><label class="grey" for="pc-24"><input type="radio" id="pc-24"></label></div></div></div></div>'
+            localStorage.setItem("data", JSON.stringify(sp));
+            location.href = "../src/shop-detail.html";
         }
-        document.getElementById("special").innerHTML = html; 
-    }
-
-    function detail(i){
-        var sp = array.special[i];
-        localStorage.setItem("data", JSON.stringify(sp));
-        location.href = "../src/shop-detail.html";
-    }
-
-</script>
+    </script>
 
 </body>
 
