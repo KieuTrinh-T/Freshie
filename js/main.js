@@ -215,7 +215,7 @@
             }
             localStorage.setItem('productCheckout', htmlsCheckout)
 
-            var trContent = '<tr class="item"><td class="product__cart__item"><div class="product__cart__item__pic"><img src="' + productImage + '" alt=""></div><div class="product__cart__item__text"><h6 class="title">' + productName + '</h6><h5 class="productTotal">' + productPrice + '</h5></div></td><td class="quantity__item"><div class="quantity"><div class="pro-qty-2"><span onclick="DeCrease(this)" class="fa fa-angle-left dec qtybtn"></span><input class="qty-input" type="text" value="1"><span onclick="InCrease(this)" class="fa fa-angle-right inc qtybtn"></span></div></div></td><td class="cart__price">' + productPrice + '</td><td class="cart__close"><i class="fa fa-close"></i></td></tr>'
+            var trContent = '<tr class="item"><td class="product__cart__item"><div class="product__cart__item__pic"><img src="../img/product/' + productImage + '" alt=""></div><div class="product__cart__item__text"><h6 class="title">' + productName + '</h6><h5 class="productTotal">' + productPrice + '</h5></div></td><td class="quantity__item"><div class="quantity"><div class="pro-qty-2"><span onclick="DeCrease(this)" class="fa fa-angle-left dec qtybtn"></span><input class="qty-input" type="text" value="1"><span onclick="InCrease(this)" class="fa fa-angle-right inc qtybtn"></span></div></div></td><td class="cart__price">' + productPrice + '</td><td class="cart__close"><i class="fa fa-close"></i></td></tr>'
             addtr.innerHTML = trContent
             let htmls = '<tr>' + trContent + '</tr>'
             if (localStorage.getItem('product') != null) {
@@ -259,7 +259,7 @@
             }
             localStorage.setItem('productCheckout', htmlsCheckout)
 
-            var trContent = '<tr class="item"><td class="product__cart__item"><div class="product__cart__item__pic"><img src="' + productImage + '" alt=""></div><div class="product__cart__item__text"><h6 class="title">' + productName + '</h6><h5 class="productTotal">' + productPrice + '</h5></div></td><td class="quantity__item"><div class="quantity"><div class="pro-qty-2"><span onclick="DeCrease(this)" class="fa fa-angle-left dec qtybtn"></span><input class="qty-input" type="text" value="1"><span onclick="InCrease(this)" class="fa fa-angle-right inc qtybtn"></span></div></div></td><td class="cart__price">' + productPrice + '</td><td class="cart__close"><i class="fa fa-close"></i></td></tr>'
+            var trContent = '<tr class="item"><td class="product__cart__item"><div class="product__cart__item__pic"><img src="../img/product/' + productImage + '" alt=""></div><div class="product__cart__item__text"><h6 class="title">' + productName + '</h6><h5 class="productTotal">' + productPrice + '</h5></div></td><td class="quantity__item"><div class="quantity"><div class="pro-qty-2"><span onclick="DeCrease(this)" class="fa fa-angle-left dec qtybtn"></span><input class="qty-input" type="text" value="1"><span onclick="InCrease(this)" class="fa fa-angle-right inc qtybtn"></span></div></div></td><td class="cart__price">' + productPrice + '</td><td class="cart__close"><i class="fa fa-close"></i></td></tr>'
             addtr.innerHTML = trContent
             let htmls = '<tr>' + trContent + '</tr>'
             if (localStorage.getItem('product') != null) {
