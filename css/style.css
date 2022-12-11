@@ -1474,11 +1474,12 @@
             
             .product__details__pic .nav-tabs {
                 border-bottom: none;
-                width: 105px;
+                width: 1005;
             }
             
             .product__details__pic .nav-tabs .nav-item {
                 margin-bottom: 10px;
+                width: 80%;
             }
             
             .product__details__pic .nav-tabs .nav-item:last-child {
@@ -1491,8 +1492,8 @@
             }
             
             .product__details__pic .nav-tabs .nav-item .nav-link .product__thumb__pic {
-                height: 120px;
-                width: 95px;
+                height: 80%;
+                width: 80%;
                 display: -webkit-box;
                 display: -ms-flexbox;
                 display: flex;
@@ -4408,4 +4409,23 @@
                 color: #850026;
                 background: #FFFFFF;
                 letter-spacing: 4px;
+            }
+            
+            .shop-detail {
+                margin-right: auto;
+                margin-left: auto;
+                width: 90%;
+                text-align: center;
+                background: #f3f2ee;
+                margin-bottom: 5px;
+            }
+            
+            .shop.btn {
+                margin-top: 20px;
+            }
+            /*-------Product item--------*/
+            
+            .product__item__pic img {
+                background-image: auto;
+                height: 100%;
             }
