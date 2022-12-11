@@ -3932,6 +3932,46 @@
             margin-right: 0;
         }
     }
+
+    .categories__text:before {
+        height: 250px;
+    }
+}
+
+.shop.spad {
+    padding: 0px
+}
+
+.shop.spad,
+.shop-item {
+    background: #850026;
+}
+
+.breadcrumb-option.col-lg-12 {
+    background: #ffffff;
+}
+
+.header_nav ul li a {
+    color: #ffffff;
+}
+
+
+/* <!----SHOP-DETAIL----> */
+
+.shop.shop-detail {
+    margin-top: 20px;
+}
+
+/* BRAND */
+
+.brand_name h2 {
+    color: #850026;
+    text-align: center;
+    font-size: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
     /* Wide Mobile = 480px */
     
     @media only screen and (max-width: 767px) {
