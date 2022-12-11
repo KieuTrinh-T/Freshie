@@ -41,8 +41,9 @@
 
     <!-- Breadcrumb Section Begin -->
     <section>
-        <div id="chanel"></div>
-        <img src="..\img\banner\banner_category.png" alt="">
+        <div id="chanel" class="col-md-10 banner shop">
+            <!-- <img src="..\img\banner\banner_category.png" alt=""> -->
+        </div>
     </section>
     <section class="breadcrumb-option col-lg-12">
         <div class="container shop">
@@ -207,8 +208,8 @@
         </div>
     </section>
     <section>
-        <div id="chanel"></div>
-        <img src="..\img\banner\banner_category_2.png" alt="">
+        <div id="chanel" class="col-md-12 banner2 shop"></div>
+        <!-- <img src="..\img\banner\banner_category_2.png" alt=""> -->
     </section>
     <!-- Shop Section End -->
 
@@ -267,6 +268,8 @@
         function detail(i) {
             var sp = myArr.product[i];
             localStorage.setItem("data", JSON.stringify(sp));
+            alert(i);
+
             location.href = "../src/shop-detail.html";
         }
 
