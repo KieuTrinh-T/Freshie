@@ -868,6 +868,10 @@
                 display: block;
             }
             
+            .categories__deal__countdown {
+                background: none;
+            }
+
             .categories__deal__countdown h2 {
                 color: #111111;
                 font-weight: 700;
@@ -2307,7 +2311,7 @@
 -----------------------*/
             
             .footer {
-                background: #111111;
+                background: black;
                 padding-top: 30px;
             }
             
@@ -2345,7 +2349,7 @@
             .footer__widget .footer__newslatter form input {
                 width: 100%;
                 font-size: 15px;
-                color: #3d3d3d;
+                color: black;
                 background: transparent;
                 border: none;
                 padding: 5px 0;
@@ -2353,23 +2357,23 @@
             }
             
             .footer__widget .footer__newslatter form input::-webkit-input-placeholder {
-                color: #3d3d3d;
+                color: black;
             }
             
             .footer__widget .footer__newslatter form input::-moz-placeholder {
-                color: #3d3d3d;
+                color: black;
             }
             
             .footer__widget .footer__newslatter form input:-ms-input-placeholder {
-                color: #3d3d3d;
+                color: black;
             }
             
             .footer__widget .footer__newslatter form input::-ms-input-placeholder {
-                color: #3d3d3d;
+                color: black;
             }
             
             .footer__widget .footer__newslatter form input::placeholder {
-                color: #3d3d3d;
+                color: black;
             }
             
             .footer__widget .footer__newslatter form button {
@@ -4387,8 +4391,21 @@
                 height: 90vh;
                 width: 90wh;
             }
+
             /* <!----SHOP-DETAIL----> */
             
             .shop.shop-detail {
                 margin-top: 20px;
+            }
+
+            /* <!---BUTTON KHÁM PHÁ---> */
+            .explorer.primary-btn{
+                display: inline-block;
+                font-size: 13px;
+                font-weight: 700;
+                text-transform: uppercase;
+                padding: 14px 30px;
+                color: #850026;
+                background: #FFFFFF;
+                letter-spacing: 4px;
             }
