@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Freshie | Tài khoản</title>
+
+    <!-- Reuse Header or Footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/logo.png">
+
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="../css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="../css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/styleSignin.css">
+    <style>
+        .my-account-tab-menu.nav-tabs .nav-link.active,
+        .my-account-tab-menu.nav-tabs .nav-link:hover {
+            background-color: #850026;
+            border-color: #ff6565;
+            color: #fff;
+        }
+        
+        .nav-link {
+            display: block;
+            width: 100%;
+            padding: .5rem 1rem;
+        }
+        
+        .my-account-tab-menu.nav-tabs .nav-link {
+            background-color: transparent;
+            border: 1px solid #e5e5e5;
+            border-bottom: none;
+            border-radius: 0;
+            color: #000;
+            font-size: 15px;
+            font-weight: 500;
+            display: block;
+            padding: 30px 15px;
+            text-align: left;
+            text-transform: capitalize;
+        }
+        
+        .nav-tabs .nav-link:focus,
+        .nav-tabs .nav-link:hover {
+            border-color: #e9ecef #e9ecef #dee2e6;
+            isolation: isolate;
+        }
+        
+        .nav-tabs .nav-link {
+            margin-bottom: -1px;
+            background: none;
+            border: 1px solid transparent;
+            border-top-left-radius: .25rem;
+            border-top-right-radius: .25rem;
+        }
+        
+        .nav-link:focus,
+        .nav-link:hover {
+            color: #850026;
+        }
+        
+        [type=button]:not(:disabled),
+        [type=reset]:not(:disabled),
+        [type=submit]:not(:disabled),
+        button:not(:disabled) {
+            cursor: pointer;
+        }
+        
+        .page-header-title {
+            font-size: 30px;
+            font-weight: 700;
+            color: #000;
+            margin-top: 20px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        
+        #AccountName {
+            font-size: 20px;
+            font-weight: 300;
+            color: #000;
+            margin-top: 20px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header>
+        <div id="header"></div>
+    </header>
+
+    <main class="main-content">
+
+        <!--== Start Page Header Area Wrapper ==-->
+        <section class="page-header-area pt-10 pb-9" data-bg-color="#FFF3DA">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="page-header-st3-content text-center text-md-start">
+
+                            <h2 class="page-header-title">Tài khoản của tôi</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--== End Page Header Area Wrapper ==-->
+
+        <!--== Start My Account Area Wrapper ==-->
+        <section class="my-account-area section-space">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="my-account-tab-menu nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="dashboad-tab" data-bs-toggle="tab" data-bs-target="#dashboad" type="button" role="tab" aria-controls="dashboad" aria-selected="true">Thông tin</button>
+                            <button class="nav-link" id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders" type="button" role="tab" aria-controls="orders" aria-selected="false"> Đơn hàng</button>
+                            <button class="nav-link" id="download-tab" data-bs-toggle="tab" data-bs-target="#download" type="button" role="tab" aria-controls="download" aria-selected="false">Yêu thích</button>
+                            <button class="nav-link" id="payment-method-tab" data-bs-toggle="tab" data-bs-target="#payment-method" type="button" role="tab" aria-controls="payment-method" aria-selected="false">Phương thức thanh toán</button>
+                            <button class="nav-link" id="address-edit-tab" data-bs-toggle="tab" data-bs-target="#address-edit" type="button" role="tab" aria-controls="address-edit" aria-selected="false">Địa chỉ</button>
+                            <button class="nav-link" id="account-info-tab" data-bs-toggle="tab" data-bs-target="#account-info" type="button" role="tab" aria-controls="account-info" aria-selected="false">Cài đặt tài khoản</button>
+                            <button class="nav-link" onclick="logout()" type="button">Đăng xuất</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-8">
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="dashboad" role="tabpanel" aria-labelledby="dashboad-tab">
+                                <div class="myaccount-content">
+                                    <h3>Dashboard</h3>
+                                    <div class="welcome">
+                                        <p id="AccountName"> </p>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+                                <div class="myaccount-content">
+                                    <h3>Orders</h3>
+                                    <div class="myaccount-table table-responsive text-center">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th>Order</th>
+                                                    <th>Date</th>
+                                                    <th>Status</th>
+                                                    <th>Total</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Aug 22, 2018</td>
+                                                    <td>Pending</td>
+                                                    <td>$3000</td>
+                                                    <td><a href="shop-cart.html" class="check-btn sqr-btn ">View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>July 22, 2018</td>
+                                                    <td>Approved</td>
+                                                    <td>$200</td>
+                                                    <td><a href="shop-cart.html" class="check-btn sqr-btn ">View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>June 12, 2017</td>
+                                                    <td>On Hold</td>
+                                                    <td>$990</td>
+                                                    <td><a href="shop-cart.html" class="check-btn sqr-btn ">View</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="download" role="tabpanel" aria-labelledby="download-tab">
+                                <div class="myaccount-content">
+                                    <h3>Downloads</h3>
+                                    <div class="myaccount-table table-responsive text-center">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th>Product</th>
+                                                    <th>Date</th>
+                                                    <th>Expire</th>
+                                                    <th>Download</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Haven - Free Real Estate PSD Template</td>
+                                                    <td>Aug 22, 2018</td>
+                                                    <td>Yes</td>
+                                                    <td><a href="#/" class="check-btn sqr-btn"><i class="fa fa-cloud-download"></i> Download File</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>HasTech - Profolio Business Template</td>
+                                                    <td>Sep 12, 2018</td>
+                                                    <td>Never</td>
+                                                    <td><a href="#/" class="check-btn sqr-btn"><i class="fa fa-cloud-download"></i> Download File</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="payment-method" role="tabpanel" aria-labelledby="payment-method-tab">
+                                <div class="myaccount-content">
+                                    <h3>Payment Method</h3>
+                                    <p class="saved-message">You Can't Saved Your Payment Method yet.</p>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="address-edit" role="tabpanel" aria-labelledby="address-edit-tab">
+                                <div class="myaccount-content">
+                                    <h3>Billing Address</h3>
+                                    <address>
+                                        <p><strong>Alex Tuntuni</strong></p>
+                                        <p>1355 Market St, Suite 900 <br>
+                      San Francisco, CA 94103</p>
+                                        <p>Mobile: (123) 456-7890</p>
+                                    </address>
+                                    <a href="#/" class="check-btn sqr-btn"><i class="fa fa-edit"></i> Edit Address</a>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="account-info" role="tabpanel" aria-labelledby="account-info-tab">
+                                <div class="myaccount-content">
+                                    <h3>Account Details</h3>
+                                    <div class="account-details-form">
+                                        <form action="#">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="single-input-item">
+                                                        <label for="first-name" class="required">First Name</label>
+                                                        <input type="text" id="first-name" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="single-input-item">
+                                                        <label for="last-name" class="required">Last Name</label>
+                                                        <input type="text" id="last-name" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="single-input-item">
+                                                <label for="display-name" class="required">Display Name</label>
+                                                <input type="text" id="display-name" />
+                                            </div>
+                                            <div class="single-input-item">
+                                                <label for="email" class="required">Email Addres</label>
+                                                <input type="email" id="email" />
+                                            </div>
+                                            <fieldset>
+                                                <legend>Password change</legend>
+                                                <div class="single-input-item">
+                                                    <label for="current-pwd" class="required">Current Password</label>
+                                                    <input type="password" id="current-pwd" />
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="single-input-item">
+                                                            <label for="new-pwd" class="required">New Password</label>
+                                                            <input type="password" id="new-pwd" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="single-input-item">
+                                                            <label for="confirm-pwd" class="required">Confirm Password</label>
+                                                            <input type="password" id="confirm-pwd" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <div class="single-input-item">
+                                                <button class="check-btn sqr-btn">Save Changes</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--== End My Account Area Wrapper ==-->
+
+    </main>
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div id="footer"></div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <script src="../js/jquery.nicescroll.min.js"></script>
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+    <script src="../js/jquery.countdown.min.js"></script>
+    <script src="../js/jquery.slicknav.js"></script>
+    <script src="../js/mixitup.min.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        $(function() {
+            $('#header').load('../src/reuseheader.html');
+            $('#footer').load('../src/reusefooter.html');
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            var user = localStorage.getItem('account');
+            if (user != null) {
+
+                document.getElementById('AccountName').innerHTML = 'Xin chào <strong >' + user + '</strong>';
+            }
+        })
+    </script>
+    <script>
+    </script>
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"; import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js"; import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,updateProfile} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"; const firebaseConfig = { apiKey: "AIzaSyAIwU6gd89NJnFH0sAJGzE1XwCv9wGPQXQ", authDomain:
+        "freshie-uel.firebaseapp.com", databaseURL: "https://freshie-uel-default-rtdb.firebaseio.com", projectId: "freshie-uel", storageBucket: "freshie-uel.appspot.com", messagingSenderId: "665183320448", appId: "1:665183320448:web:d35d7291577c7276d12965",
+        measurementId: "G-N5D0L2ST2N" }; const app = initializeApp(firebaseConfig); const analytics = getAnalytics(app); const database = getDatabase(app); const auth = getAuth(app); function logout(){alert("click"), auth.signOut();localStorage.removeItem('account');
+        window.location.href = "../index.html";}
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
