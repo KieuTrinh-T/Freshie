@@ -36,7 +36,7 @@
             </div>
         </div>
         <div class="offcanvas__nav__option">
-            <a href="/index.html" class="search-switch"><img src="/img/icon/search.png" alt=""></a>
+            <a href="/index.html" class="search-switch" id="search-switch"><img src="/img/icon/search.png" alt=""></a>
             <a href="/src/user.html"><img src="/img/icon/user.png" alt=""></a>
             <a href="/src/shopping-cart.html"><img src="/img/icon/cart.png" alt=""> <span>0</span></a>
         </div>
@@ -65,7 +65,7 @@
                                     <li id="sofa"><a href="../src/shop-Perfume.html">Nước hoa</a></li>
                                 </ul>
                             </li>
-                            <li id="collection" ><a>Thương hiệu</a>
+                            <li id="collection"><a>Thương hiệu</a>
                                 <ul class="dropdown">
                                     <li id="modern-house"><a href="../src/brand-gucci.html">GUCCI</a></li>
                                     <li id="seasonal"><a href="../src/brand-estee.html">Lancôme</a></li>
@@ -90,19 +90,6 @@
     </header>
     <!-- Header Section End -->
 
-    <!-- Search Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center-1 justify-content-center">
-            <div class="search-close-switch">+</div>
-            <form class="search-model-form">
-                <input class="searchbar" type="text" id="search-input" placeholder="Tìm kiếm sản phẩm...">
-                <div class="search-results">
-                </div>
-            </form>
-
-        </div>
-    </div>
-    <!-- Search End -->
 
     <script>
         var home = document.getElementById("home");
@@ -185,6 +172,17 @@
     <script>
         document.getElementById('cart-count-info').innerText = JSON.parse(localStorage.getItem('cart')).length
     </script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <script src="../js/jquery.nicescroll.min.js"></script>
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+    <script src="../js/jquery.countdown.min.js"></script>
+    <script src="../js/jquery.slicknav.js"></script>
+    <script src="../js/mixitup.min.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/main.js"></script>
+
 
 </body>
 

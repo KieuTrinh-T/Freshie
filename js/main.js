@@ -214,8 +214,8 @@
             }
             cart.push(newItems)
             localStorage.setItem('cart', JSON.stringify(cart))
-            document.getElementById('cart-count-info').innerText = JSON.parse(localStorage.getItem('cart')).length
-            var cartCount = parseInt($('cart-count-info').innerHTML) + 1
+            document.getElementById('cart-count-info').innerText = cart.length
+
 
             localStorage.setItem('productCount', parseInt(document.getElementById('cart-count-info').innerText) + 1)
 
