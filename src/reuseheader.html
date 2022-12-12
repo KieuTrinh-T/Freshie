@@ -182,6 +182,9 @@
             location.href = "/src/shop-detail.html";
         }
     </script>
+    <script>
+        document.getElementById('cart-count-info').innerText = JSON.parse(localStorage.getItem('cart')).length
+    </script>
 
 </body>
 
