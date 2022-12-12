@@ -173,6 +173,7 @@
     const btn = document.querySelectorAll('.add-cart')
     const btnAdd = document.querySelectorAll('.primary-btn')
     btnAdd.forEach(function(a, index) {
+
         a.addEventListener("click", function(event) {
             var product = JSON.parse(localStorage.getItem('data'))
                 // var btnItem = event.target
@@ -191,13 +192,36 @@
             var addtr = document.createElement("tr")
             var addtrCheckout = document.createElement("tr")
             var cartItem = document.querySelectorAll('.item')
+            let newItems = {
+                prImage: product.prImage,
+                prName: product.prName,
+                prPrice: product.prPrice,
+                quty: 1
+            }
+            var cart = JSON.parse(localStorage.getItem('cart'))
+            if (cart == null) {
+                cart = []
+            }
+            for (let i = 0; i < cart.length; i++) {
+                if (cart[i].prName == product.prName) {
+                    cart[i].quty += 1
+                    alert("Sản phẩm đã tồn tại trong giỏ hàng!")
+
+                } else { cart.push(newItems) }
+                localStorage.setItem('cart', JSON.stringify(cart))
+
+                return
+            }
+            cart.push(newItems)
+            localStorage.setItem('cart', JSON.stringify(cart))
+
 
 
             var cartCount = parseInt($('cart-count-info').innerHTML) + 1
 
             localStorage.setItem('productCount', parseInt(document.getElementById('cart-count-info').innerText) + 1)
 
-            document.getElementById('cart-count-info').innerText = localStorage.getItem('productCount')
+            document.getElementById('cart-count-info').innerText = JSON.parse(localStorage.getItem('cart')).length
             for (var i = 0; i < cartItem.length; i++) {
                 var productT = document.querySelectorAll(".title")
                 if (productT[i].innerHTML == productName) {
