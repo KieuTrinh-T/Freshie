@@ -41,8 +41,9 @@
 
     <!-- Breadcrumb Section Begin -->
     <section>
-        <div id="chanel"></div>
-        <img src="..\img\banner\banner_category.png" alt="">
+        <div id="chanel" class="col-md-10 banner shop">
+            <!-- <img src="..\img\banner\banner_category.png" alt=""> -->
+        </div>
     </section>
     <section class="breadcrumb-option col-lg-12">
         <div class="container shop">
@@ -207,8 +208,8 @@
         </div>
     </section>
     <section>
-        <div id="chanel"></div>
-        <img src="..\img\banner\banner_category_2.png" alt="">
+        <div id="chanel" class="col-md-12 banner2 shop"></div>
+        <!-- <img src="..\img\banner\banner_category_2.png" alt=""> -->
     </section>
     <!-- Shop Section End -->
 
@@ -236,28 +237,28 @@
 
     <script>
         //Load data from Json
-        var xmlHttp = new XMLHttpRequest();
+        var XMLHttp = new XMLHttpRequest();
         var html = "";
         var i;
-        var uri = "../json/product.json";
-        let myArr;
-        xmlHttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                // var myArr = JSON.parse(this.responseText);
-                myArr = JSON.parse(this.responseText);
-                myFunction(myArr.product);
+        var uri = "../json/ProductAll.json";
+        let array;
+        XMLHttp.onreadystatechange = function() {
+            if (this.readyState == 4 & this.status == 200) {
+                array = JSON.parse(this.responseText);
+                myFunction(array);
             }
         }
-        xmlHttp.open("GET", uri, true);
-        xmlHttp.send();
+        XMLHttp.open("GET", uri, true);
+        XMLHttp.send();
 
         //Show data
         function myFunction(array) {
             html = "<div class='product'><div class='row'>";
-            for (i = 0; i < array.length; i++) {
+            for (i = 0; i < 15; i++) {
                 var sp = array;
-                html += "<div class='col-lg-4 col-md-6 col-sm-6 shop-item'><div class='product__item'><div class='product__item__pic set-bg' data-setbg=" + sp[i].prImage + " onClick=detail(" + i + ") ><img style='display: BLOCK;' src='" + sp[i].prImage + "'><ul style='margin-top: 70px;' class='product__hover'><li><a href='#'><img src='../img/icon/heart.png'><span>Yêu thích</span></a></li><li><a href='#'><img src='../img/icon/search.png'><span onClick=detail(" + i + ")>Chi tiết</span></a></li></ul></div><div  class='product__item__text'><h6>" + sp[i].prName + "</h6><a href='#' class='add-cart'>+ Thêm vào giỏ hàng</a><div class='rating'><i class='fa fa-star' ></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star-o'></i></div><h5>" + sp[i].prPrice + "đ</h5><div class='product__color__select'><label for='pc-4'><input type='radio' id='pc-4'></label><label class='active black' for='pc-5'><input type='radio' id='pc-5'></label><label class='grey' for='pc-6'><input type='radio' id='pc-6'></label></div></div></div></div>"
-                    // html += "<div class='col-lg-4 col-md-6 col-sm-6'><div class='product__item'><div class='product__item__pic set-bg' onClick=detail(" + i + ")><img src='" + sp[i].prImage + "'><ul class='product__hover'><li><a href='#'><img src='img/icon/heart.png'></a></li><li><a href='#'><img src='img/icon/compare.png'><span>Đối chiếu</span></a></li><li><a href='#'><img src='img/icon/search.png'></a></li></ul></div><div class='product__item__text'><h6>"+ sp[i].prName +"</h6><a href='#' class='add-cart'>+ Thêm vào giỏ hàng</a><div class='rating'><i class='fa fa-star' ></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star-o'></i></div><h5>"+ sp[i].prPrice + "đ</h5><div class='product__color__select'><label for='pc-4'><input type='radio' id='pc-4'></label><label class='active black' for='pc-5'><input type='radio' id='pc-5'></label><label class='grey' for='pc-6'><input type='radio' id='pc-6'></label></div></div></div></div>";
+
+                html += "<div class='col-lg-4 col-md-6 col-sm-6 shop-item'><div class='product__item'><div class='product__item__pic set-bg' data-setbg='../img/product/" + sp[i].prImage + "' onClick=detail(" + i + ") ><img style='display: BLOCK;' src='../img/product/" + sp[i].prImage + "'><ul style='margin-top: 70px;' class='product__hover'><li><a href='#'><img src='../img/icon/heart.png'><span>Yêu thích</span></a></li><li><a href='#'><img src='../img/icon/search.png'><span onClick=detail(" + i + ")>Chi tiết</span></a></li></ul></div><div  class='product__item__text'><h6>" + sp[i].prName + "</h6><a href='#' class='add-cart'>+ Thêm vào giỏ hàng</a><div class='rating'><i class='fa fa-star' ></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star-o'></i></div><h5>" + sp[i].prPrice + "đ</h5><div class='product__color__select'><label for='pc-4'><input type='radio' id='pc-4'></label><label class='active black' for='pc-5'><input type='radio' id='pc-5'></label><label class='grey' for='pc-6'><input type='radio' id='pc-6'></label></div></div></div></div>";
+                // html += "<div class='col-lg-4 col-md-6 col-sm-6'><div class='product__item'><div class='product__item__pic set-bg' onClick=detail(" + i + ")><img src='" + sp[i].prImage + "'><ul class='product__hover'><li><a href='#'><img src='img/icon/heart.png'></a></li><li><a href='#'><img src='img/icon/compare.png'><span>Đối chiếu</span></a></li><li><a href='#'><img src='img/icon/search.png'></a></li></ul></div><div class='product__item__text'><h6>"+ sp[i].prName +"</h6><a href='#' class='add-cart'>+ Thêm vào giỏ hàng</a><div class='rating'><i class='fa fa-star' ></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star-o'></i></div><h5>"+ sp[i].prPrice + "đ</h5><div class='product__color__select'><label for='pc-4'><input type='radio' id='pc-4'></label><label class='active black' for='pc-5'><input type='radio' id='pc-5'></label><label class='grey' for='pc-6'><input type='radio' id='pc-6'></label></div></div></div></div>";
             }
             html += "</div></div>";
             document.getElementById("listProduct").innerHTML = html;
@@ -267,6 +268,8 @@
         function detail(i) {
             var sp = myArr.product[i];
             localStorage.setItem("data", JSON.stringify(sp));
+            alert(i);
+
             location.href = "../src/shop-detail.html";
         }
 
