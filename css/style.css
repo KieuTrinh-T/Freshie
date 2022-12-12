@@ -859,7 +859,7 @@
             }
             
             .categories__deal__countdown span {
-                color: #05ac29;
+                color: #3cff66;
                 font-size: 14px;
                 font-weight: 700;
                 text-transform: uppercase;
@@ -869,7 +869,7 @@
             }
             
             .categories__deal__countdown {
-                background: none;
+                background-color: inherit;
             }
 
             .categories__deal__countdown h2 {
@@ -900,7 +900,7 @@
                 content: ":";
                 font-size: 24px;
                 font-weight: 700;
-                color: #3d3d3d;
+                color: #ffffff;
             }
             
             .categories__deal__countdown .categories__deal__countdown__timer .cd-item:last-child:after {
@@ -908,7 +908,7 @@
             }
             
             .categories__deal__countdown .categories__deal__countdown__timer .cd-item span {
-                color: #111111;
+                color: #ffffff;
                 font-weight: 700;
                 display: block;
                 font-size: 36px;
@@ -926,10 +926,11 @@
             }
             
             .instagram__pic__item {
-                width: 33.33%;
+                width: 100%;
                 float: left;
-                height: 261px;
+                height: 100%;
                 background-position: center center;
+                background-color: #850026;
             }
             
             .instagram__text {
@@ -3098,7 +3099,7 @@
             }
             
             .blog__item {
-                margin-bottom: 45px;
+                margin-bottom: 10px;
             }
             
             .blog__item:hover a::after {
@@ -3116,7 +3117,7 @@
             }
             
             .blog__item__text {
-                padding: 30px 30px 25px;
+                padding: 5px 5px 5px;
                 margin: 0 30px;
                 margin-top: -35px;
                 background: #ffffff;
@@ -4405,6 +4406,17 @@
                 background: #FFFFFF;
                 letter-spacing: 4px;
             }
+
+            .more{
+                display: inline-block;
+                font-size: 13px;
+                font-weight: 700;
+                text-transform: uppercase;
+                padding: 14px 30px;
+                color: #ffffff;
+                background: #850026;
+                letter-spacing: 4px;
+            }
             
             .shop-detail {
                 margin-right: auto;
@@ -4449,3 +4461,15 @@
                 height: 60vh;
                 width: 100%;
             }
+            /*----horizontal scrolling----*/
+            .horizontal-scrolling {
+                background-color: #850026;
+                height: 100px;
+                width: 100%;
+                overflow-x: scroll;
+                }
+            .item.horizontal-scrolling {
+                width: 100%;
+                margin: 10px;
+                }
+            
