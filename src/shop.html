@@ -221,17 +221,16 @@
 
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script> -->
-    <!-- <script src="js/bootstrap.min.js"></script> -->
-    <!-- <script src="js/jquery.nice-select.min.js"></script> -->
-    <!-- <script src="js/jquery.nicescroll.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/mixitup.min.js"></script> -->
-    <!-- <script src="js/owl.carousel.min.js"></script>
-    <script src="..js/main.js"></script>
-    <!-- <script src="js/script.js"></script> -->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <script src="../js/jquery.nicescroll.min.js"></script>
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+    <script src="../js/jquery.countdown.min.js"></script>
+    <script src="../js/jquery.slicknav.js"></script>
+    <script src="../js/mixitup.min.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/main.js"></script>
 
 
     <script>
@@ -265,10 +264,9 @@
 
         //onClick product detail
         function detail(i) {
-            var sp = myArr.product[i];
-            alert(sp.prName);
+
+            var sp = array[i];
             localStorage.setItem("data", JSON.stringify(sp));
-            alert(i);
 
             location.href = "../src/shop-detail.html";
         }
@@ -281,14 +279,14 @@
             if (optionsort == 1) {
                 location.href = "../src/shop.html";
             } else if (optionsort == 2) { //Low to high
-                var sp = myArr.product.sort(function(a, b) {
+                var sp = array.sort(function(a, b) {
                     return a.prPrice.slice(0, length - 1).split('.').join('') - b.prPrice.slice(0, length - 1).split('.').join('');
                 });
 
 
                 myFunction(sp);
             } else if (optionsort == 3) { //high to low
-                var sp = myArr.product.sort(function(a, b) {
+                var sp = array.sort(function(a, b) {
                     return b.prPrice.slice(0, length - 1).split('.').join('') - a.prPrice.slice(0, length - 1).split('.').join('');
                 });
             }
