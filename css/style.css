@@ -4418,6 +4418,17 @@
                 letter-spacing: 4px;
             }
             
+            #origiprice {
+                text-decoration: line-through;
+                color: #4b4848;
+                size: 13px;
+            }
+            
+            #price {
+                color: #850026;
+                size: 23px;
+            }
+            
             .shop-detail {
                 margin-right: auto;
                 margin-left: auto;
@@ -4460,6 +4471,7 @@
                 background-repeat: no-repeat;
                 height: 60vh;
                 width: 100%;
+<<<<<<< Updated upstream
             }
 
 
@@ -4474,3 +4486,6 @@
                 width: 100%;
                 margin: 10px;
                 }
+=======
+            }
+>>>>>>> Stashed changes

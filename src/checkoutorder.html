@@ -258,11 +258,16 @@
     <script>
         function addCartCheckout() {
             var cartTable = document.querySelector('.cart_product_checkout')
-            const item = localStorage.getItem('productCheckout')
-            var currentHtml = cartTable.innerHTML;
+            let item = ''
+                // const item = localStorage.getItem('product')
 
+            var cartItems = JSON.parse(localStorage.getItem('cart'))
+            for (let i = 0; i < cartItems.length; i++) {
+                item += '<tr class="checkout_item"><td><div style="float: left; width: 150px;"><img src="../img/product/' + cartItems[i].prImage + '" alt=""></div></td><td><div style="margin-left: 30px; width: 350px;"><p>Tên sản phẩm: <strong>' + cartItems[i].prName + '</strong></p><p>Số lượng: <strong>1</strong></p><p>Giá: <strong class="checkout_price">' + cartItems[i].prPrice + '</strong></p></div></td></tr>'
+            }
+            var currentHtml = cartTable.innerHTML;
             currentHtml += item
-            document.getElementById('.cart_product_checkout').innerHTML = currentHtml
+            cartTable.innerHTML = currentHtml
         }
 
         function checkoutTotal() {

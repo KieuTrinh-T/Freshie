@@ -1,0 +1,27 @@
+[{
+        "name": "Kiều Trinh",
+        "username": "kieutrinh",
+        "pass": "K204111813",
+        "avatar": "/img/about/team/kieutrinh.jpg"
+
+    },
+    {
+        "name": "Linh Anh",
+        "username": "linhanh",
+        "pass": "K204111797",
+        "avatar": "/img/about/team/linhanh.jpg"
+    },
+    {
+        "name": "Thành Phát",
+        "username": "thanhphat",
+        "pass": "K204110605",
+        "avatar": "/img/about/team/thanhphat.jpg"
+    },
+    {
+        "name": "Ngọc Hiếu",
+        "username": "ngochieu",
+        "pass": "K204110566",
+        "avatar": "/img/about/team/ngochieu.jpg"
+    }
+
+]
