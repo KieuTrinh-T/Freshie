@@ -257,11 +257,10 @@
     <script src="../js/main.js"></script>
     <script>
         function addCartCheckout() {
-            // var cartTable = document.querySelector('.cart_product_checkout')
-            alert(localStorage.getItem('productCheckout'))
-
+            var cartTable = document.querySelector('.cart_product_checkout')
             const item = localStorage.getItem('productCheckout')
             var currentHtml = cartTable.innerHTML;
+
             currentHtml += item
             document.getElementById('.cart_product_checkout').innerHTML = currentHtml
         }

@@ -65,7 +65,7 @@
                                 <tr>
                                     <th>Sản phẩm</th>
                                     <th>Số lượng</th>
-                                    <th>Số tiền</th>
+                                    <th>Đơn giá</th>
                                     <th></th>
                                 </tr>
                                 <!-- <tr class="item_checkout">
@@ -143,11 +143,18 @@
 </body>
 <script>
     function addCart() {
-        console.log(localStorage.getItem('product'))
-        console.log(localStorage.getItem('productCheckout'))
+        // console.log(localStorage.getItem('product'))
+        // console.log(localStorage.getItem('productCheckout'))
         var cartTable = document.querySelector('.cart_product')
         console.log(cartTable)
-        const item = localStorage.getItem('product')
+        let item = ''
+            // const item = localStorage.getItem('product')
+
+        var cartItems = JSON.parse(localStorage.getItem('cart'))
+        for (let i = 0; i < cartItems.length; i++) {
+
+            item += '<tr class="item"><td class="product__cart__item"><div class="product__cart__item__pic"><img src="../img/product/' + cartItems[i].prImage + '" alt=""></div><div class="product__cart__item__text"><h6 class="title">' + cartItems[i].prName + '</h6><h5 class="productTotal">' + cartItems[i].prPrice + '</h5></div></td><td class="quantity__item"><div class="quantity"><div class="pro-qty-2"><span onclick="DeCrease(this)" class="fa fa-angle-left dec qtybtn"></span><input class="qty-input" type="text" value="' + cartItems[i].quty + '"><span onclick="InCrease(this)" class="fa fa-angle-right inc qtybtn"></span></div></div></td><td class="cart__price">' + cartItems[i].prPrice + '</td><td class="cart__close"><i class="fa fa-close"></i></td></tr>'
+        }
         var currentHtml = cartTable.innerHTML;
         currentHtml += item
         cartTable.innerHTML = currentHtml
@@ -192,16 +199,23 @@
     }
 
     function cartTotal() {
-        var cartItem = document.querySelectorAll('.item')
+        const cartItem = document.querySelectorAll('.item')
         console.log(cartItem)
-        var totalCart = 0
-        var total
+        let totalCart = 0
+        let rawPproductPrice = ''
+
         for (var i = 0; i < cartItem.length; i++) {
             var inputValue = cartItem[i].querySelector('.pro-qty-2 input').value
-            var productPrice = cartItem[i].querySelector('.cart__price').innerHTML
+
+            console.log(inputValue)
+                // rawProductPrice = cartItem[i].querySelector('.cart__price').innerHTML
+                // console.log(rawProductPrice)
+            let productPrice = parseFloat(cartItem[i].querySelector('.cart__price').innerHTML.slice(0, -2).split('.').join(''))
             console.log(productPrice)
-            total = inputValue * parseFloat(productPrice.slice(0, length - 1).split('.').join(''))
+                // var total = parseFloat(inputValue) * parseFloat(productPrice.slice(0, length - 1).split('.').join(''))
+            var total = parseFloat(inputValue) * parseFloat(productPrice)
             console.log(total)
+
             totalCart = totalCart + total
         }
         var cartTotalSet = document.querySelector('.cart__total_price')
