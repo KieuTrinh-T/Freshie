@@ -4471,9 +4471,10 @@
             }
             
             .flip-card-back {
-                background-color: #df9904;
+                background-color: #850026;
                 color: white;
                 transform: rotateY(180deg);
+                
             }
             
             .flip-card-back h4 {
@@ -5054,7 +5055,6 @@
                 background-image: auto;
                 height: 100%;
             }
-
             /*--------shop--------*/
             
             .banner.shop {
