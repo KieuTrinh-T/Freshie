@@ -4584,11 +4584,6 @@
                 padding: 0px
             }
             
-            .shop.spad,
-            .shop-item {
-                background: #850026;
-            }
-            
             .breadcrumb-option.col-lg-12 {
                 background: #ffffff;
             }
@@ -5018,7 +5013,7 @@
             
             .shop.spad,
             .shop-item {
-                background: #850026;
+                background: #fff;
             }
             
             .breadcrumb-option.col-lg-12 {
@@ -5049,9 +5044,39 @@
                 background: #f3f2ee;
                 margin-bottom: 5px;
             }
+            
+            .shop.btn {
+                margin-top: 20px;
+            }
             /*-------Product item--------*/
             
             .product__item__pic img {
                 background-image: auto;
                 height: 100%;
+            }
+
+            /*--------shop--------*/
+            
+            .banner.shop {
+                background-image: url('/img/banner/banner_category.png');
+                background-size: cover;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 30px;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 50vh;
+                width: 100%;
+            }
+            
+            .banner2.shop {
+                background-image: url('/img/banner/banner_category_2.png');
+                background-size: cover;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 30px;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 60vh;
+                width: 100%;
             }

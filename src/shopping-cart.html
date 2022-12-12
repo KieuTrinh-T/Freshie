@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Woody | Giỏ hàng</title>
+    <title>Freshie | Giỏ hàng</title>
 
     <!-- Reuse Header or Footer -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -68,12 +68,12 @@
                                     <th>Số tiền</th>
                                     <th></th>
                                 </tr>
-                                <tr class="item_checkout">
+                                <!-- <tr class="item_checkout">
                                     <th>item.prName</th>
                                     <th>Số lượng</th>
                                     <th>Số tiền</th>
                                     <th></th>
-                                </tr>
+                                </tr> -->
                             </thead>
                             <tbody class="cart_product">
 
@@ -142,6 +142,85 @@
 
 </body>
 <script>
+    function addCart() {
+        console.log(localStorage.getItem('product'))
+        console.log(localStorage.getItem('productCheckout'))
+        var cartTable = document.querySelector('.cart_product')
+        console.log(cartTable)
+        const item = localStorage.getItem('product')
+        var currentHtml = cartTable.innerHTML;
+        currentHtml += item
+        cartTable.innerHTML = currentHtml
+    }
+
+    function deleteCart() {
+        var cartItem = document.querySelectorAll('.shopping__cart__table tbody tr')
+        console.log(cartItem)
+        cartTotal()
+        for (var i = 0; i < cartItem.length; i++) {
+            var productT = document.querySelectorAll(".cart__close")
+            productT[i].addEventListener("click", function(event) {
+                    var cartdel = event.target
+                    var cartProduct = cartdel.parentElement.parentElement
+                    cartProduct.remove()
+                    cartTotal()
+                    if (localStorage.getItem('product') != null) {
+                        var current = localStorage.getItem('product');
+                        htmls = current + htmls;
+                    }
+                    localStorage.setItem('product', htmls)
+                })
+                // localStorage.removeItem('product')
+                // localStorage.removeItem('productCheckout')
+        }
+
+    }
+
+    function InCrease(element) {
+        var currentQty = parseInt(element.parentElement.querySelector('.qty-input').value)
+        element.parentElement.querySelector('.qty-input').value = currentQty + 1;
+        cartTotal()
+        Checkout()
+    }
+
+    function DeCrease(element) {
+        var currentQty = parseInt(element.parentElement.querySelector('.qty-input').value)
+        if (currentQty > 1) {
+            element.parentElement.querySelector('.qty-input').value = currentQty - 1;
+        }
+        cartTotal()
+    }
+
+    function cartTotal() {
+        var cartItem = document.querySelectorAll('.item')
+        console.log(cartItem)
+        var totalCart = 0
+        var total
+        for (var i = 0; i < cartItem.length; i++) {
+            var inputValue = cartItem[i].querySelector('.pro-qty-2 input').value
+            var productPrice = cartItem[i].querySelector('.cart__price').innerHTML
+            console.log(productPrice)
+            total = inputValue * parseFloat(productPrice.slice(0, length - 1).split('.').join(''))
+            console.log(total)
+            totalCart = totalCart + total
+        }
+        var cartTotalSet = document.querySelector('.cart__total_price')
+        cartTotalSet.innerHTML = totalCart.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "₫";
+        var cartTotalSet1 = document.querySelector('.cart__total_price_ship')
+        cartTotalSet1.innerHTML = totalCart.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "₫";
+    }
+
+    function Checkout() {
+
+        const btn = document.querySelectorAll('.item')
+        console.log(btn)
+        var productImage = product.querySelector('img').src
+        var productName = product.querySelector("H6").innerText
+        var productPrice = product.querySelector("H5").innerText
+        console.log(productName)
+        console.log(productImage)
+        console.log(productPrice)
+    }
 </script>
 
 </html>

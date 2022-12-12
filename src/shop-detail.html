@@ -119,7 +119,7 @@
                                     <span>Số lượng : </span>
                                     <input type="number" id="num" oninput="calc()" min="1" max="1000" value="1" />
                                 </div>
-                                <div class="shop ">
+                                <div class="shop btn">
                                     <a href="#" class="primary-btn">Thêm vào giỏ hàng</a>
                                     <a href="#" class="primary-btn">Mua ngay</a>
                                 </div>
@@ -140,13 +140,13 @@
                         <div class="product__details__tab">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#tabs-5" role="tab">Thông tin sản phẩm</a>
+                                    <a class="nav-link active" data-toggle="tab" href="#tabs-5" role="tab" style="color: #850026;">Thông tin sản phẩm</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a id="RvNumber_tab" class="nav-link" data-toggle="tab" href="#tabs-6" role="tab">Mô tả sản phẩm</a>
+                                    <a id="RvNumber_tab" class="nav-link" data-toggle="tab" href="#tabs-6" role="tab" style="color: #850026;">Mô tả sản phẩm</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#tabs-7" role="tab">Đánh giá chi tiết</a>
+                                    <a class="nav-link" data-toggle="tab" href="#tabs-7" role="tab" style="color: #850026;">Đánh giá chi tiết</a>
                                 </li>
                             </ul>
                             <div class="tab-content">
@@ -165,7 +165,7 @@
                                     <div class="product__details__tab__content">
                                         <div class="product__details__tab__content__item">
                                             <p id="description">Công dụng serum chống lão hoá da Estee Lauder thế hệ mới:
-
+                                                
                                             </p>
                                         </div>
                                     </div>
@@ -173,18 +173,22 @@
                                 <div class="tab-pane" id="tabs-7" role="tabpanel">
                                     <div class="product__details__tab__content">
                                         <div class="product__details__tab__content__item">
-                                            <div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
-                                                <div class="p-b-30 m-lr-15-sm">
+                                            <div class="col-sm-10 col-md-8 col-lg-12 m-lr-auto">
+                                                <div class="p-b-30 m-lr-15-sm ">
+                                                    <div class="col-lg-12">
+                                                        <h4 id="RvNumber_total" style="margin-bottom: 2pc;"></h4>
+                                                    </div>
                                                     <!-- Review -->
+
                                                     <div class="flex-w flex-t p-b-68">
                                                         <div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
-                                                            <img src="../img/review/cus_ngoc.jpg" alt="AVATAR">
+                                                            <img src="../img/review/cus_phat.jpg" alt="AVATAR">
                                                         </div>
 
                                                         <div class="size-207">
                                                             <div class="flex-w flex-sb-m p-b-17">
                                                                 <span class="mtext-107 cl2 p-r-20">
-                                                                    Tống Thị Phước Ngọc <br>
+                                                                    Nguyễn Thành Phát <br>
                                                                     <span class="mtext-107 cl2 p-r-20">
                                                                         <i class="fa fa-star"></i>
                                                                         <i class="fa fa-star"></i>
@@ -194,20 +198,20 @@
                                                                     </span>
                                                                 </span>
                                                             </div>
-                                                            <p class="stext-102 cl6">
+                                                            <p class="stext-102 cl12">
                                                                 Cải thiện da tốt, hiệu quả nhanh, Khả năng thẩm thấu nhanh, Không gây kích ứng da, không nhờn, bết dính da.
                                                             </p>
                                                         </div>
                                                     </div>
                                                     <div class="flex-w flex-t p-b-68">
                                                         <div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
-                                                            <img src="../img/review/cus_ngan.jpg" alt="AVATAR">
+                                                            <img src="../img/review/cus_anh.jpg" alt="AVATAR">
                                                         </div>
 
                                                         <div class="size-207">
                                                             <div class="flex-w flex-sb-m p-b-17">
                                                                 <span class="mtext-107 cl2 p-r-20">
-                                                                    Nguyễn Minh Ngân <br>
+                                                                    Nguyễn Thị Linh Anh <br>
                                                                     <span class="mtext-107 cl2 p-r-20">
                                                                         <i class="fa fa-star"></i>
                                                                         <i class="fa fa-star"></i>
@@ -217,13 +221,36 @@
                                                                     </span>
                                                                 </span>
                                                             </div>
-                                                            <p class="stext-102 cl6">
+                                                            <p class="stext-102 cl12">
                                                                 Chất lượng sản phẩm tốt, thái độ nhân viên nhiệt tình. Nói chung là Okela
                                                             </p>
                                                         </div>
                                                     </div>
+                                                    <div class="flex-w flex-t p-b-68">
+                                                        <div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
+                                                            <img src="../img/review/cus_xuan.jpg" alt="AVATAR">
+                                                        </div>
 
-                                                    <!-- Add review
+                                                        <div class="size-207">
+                                                            <div class="flex-w flex-sb-m p-b-17">
+                                                                <span class="mtext-107 cl2 p-r-20">
+                                                                    Nguyễn Thị Nghi Xuân <br>
+                                                                    <span class="mtext-107 cl2 p-r-20">
+                                                                        <i class="fa fa-star"></i>
+                                                                        <i class="fa fa-star"></i>
+                                                                        <i class="fa fa-star"></i>
+                                                                        <i class="fa fa-star"></i>
+                                                                        <i class="fa fa-star"></i>
+                                                                    </span>
+                                                                </span>
+                                                            </div>
+                                                            <p class="stext-102 cl12">
+                                                                Sản phẩm tốt, giá cả hợp lý, giao hàng nhanh, nhân viên nhiệt tình, tư vấn tận tình. Tôi rất hài lòng về sản phẩm và dịch vụ của shop.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Add review -->
                                                     <form class="w-full">
                                                         <h5 class="mtext-108 cl2 p-b-7">
                                                             Thêm Nhận Xét
@@ -266,10 +293,10 @@
                                                             </div>
                                                         </div>
             
-                                                        <button class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10">
+                                                        <button class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10" style="background-color: #850026;">
                                                             Phản Hồi
                                                         </button>
-                                                    </form> -->
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
@@ -322,7 +349,7 @@
         document.getElementById("description").innerHTML = sp.prDescription;
         document.getElementById("info").innerHTML = sp.prInfo;
         document.getElementById("RvNumber").innerHTML = " - " + sp.prRvNumber + " đánh giá";
-        document.getElementById("RvNumber_tab").innerHTML = "Đánh giá của khách hàng (" + sp.prRvNumber + ")";
+        document.getElementById("RvNumber_total").innerHTML = "Đánh giá của khách hàng (" + sp.prRvNumber + ")";
     </script>
 
     <!-- Js Plugins -->
@@ -339,8 +366,8 @@
     <script src="../js/main.js"></script>
     <script>
         $(function() {
-            $('#header').load('../src/reuseheader.html');
-            $('#footer').load('../src/reusefooter.html');
+            $('#header').load('reuseheader.html');
+            $('#footer').load('reusefooter.html');
         });
     </script>
 
@@ -348,7 +375,7 @@
         var XMLHttp = new XMLHttpRequest();
         var html = "";
         var i;
-        var uri = "../json/product.json";
+        var uri = "../json/ProductCategory.json";
         let array;
         XMLHttp.onreadystatechange = function() {
             if (this.readyState == 4 & this.status == 200) {
@@ -359,16 +386,18 @@
         XMLHttp.open("GET", uri, true);
         XMLHttp.send();
 
+        let category = JSON.parse(localStorage.getItem('data')).Category;
+
         function myFunction(array) {
-            for (i = 0; i < array.related.length; i++) {
-                var sp = array.related[i];
-                html += '<div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6"><div class="product__item"><div  class="product__item__pic set-bg" data-setbg=' + sp.prImage + ' onClick=detail(' + i + ')><img style="display: none;" src=' + sp.prImage + '><ul style="margin-top: 70px;" class="product__hover"><li><a href="#"><img src="/img/icon/heart.png" alt=""><span>Yêu thích</span></a></li><li><a href="#"><img src="/img/icon/search.png" alt=""><span onClick=detail(' + i + ')>Chi tiết</span></a></li></ul></div><div class="product__item__text"><h6>' + sp.prName + '</h6><a href="#" class="add-cart">+ Add To Cart</a> <div class="rating"><i class="fa fa-star" ></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i></div><h5>' + sp.prPrice + '</h5><div class="product__color__select"><label for="pc-22"><input type="radio" id="pc-22"></label><label class="active black" for="pc-23"><input type="radio" id="pc-23"></label><label class="grey" for="pc-24"><input type="radio" id="pc-24"></label></div></div></div></div>'
+            for (i = 0; i < 9; i++) {
+                var sp = array.Skincare[i];
+                html += "<div class='col-lg-4 col-md-6 col-sm-6'><div class='product__item'><div class='product__item__pic set-bg' data-setbg='../img/product/" + sp.prImage + "' onClick=detail(" + i + ") ><img style='display: block;' src='../img/product/" + sp.prImage + "'><ul style='margin-top: 70px;' class='product__hover'><li><a href='#'><img src='../img/icon/heart.png'><span>Yêu thích</span></a></li><li><a href='#'><img src='../img/icon/search.png'><span onClick=detail('+ i + ')>Chi tiết</span></a></li></ul></div><div  class='product__item__text'><h6>" + sp.prName + "</h6><a href='#' class='add-cart'>+ Thêm vào giỏ hàng</a><div class='rating'><i class='fa fa-star' ></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star-o'></i></div><h5>" + sp.prPrice + "đ</h5><div class='product__color__select'><label for='pc-4'><input type='radio' id='pc-4'></label><label class='active black' for='pc-5'><input type='radio' id='pc-5'></label><label class='grey' for='pc-6'><input type='radio' id='pc-6'></label></div></div></div></div>"
             }
             document.getElementById("related-products").innerHTML = html;
         }
 
         function detail(i) {
-            var sp = array.related[i];
+            var sp = array.Skincare[i];
             localStorage.setItem("data", JSON.stringify(sp));
             location.href = "../src/shop-detail.html";
         }
@@ -377,4 +406,3 @@
 </body>
 
 </html>
-1
