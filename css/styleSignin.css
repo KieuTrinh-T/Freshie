@@ -177,6 +177,11 @@ form .btn {
 form .btn .btn-layer {
     height: 100%;
     width: 300%;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 50px;
     position: absolute;
     left: -100%;
     background: -webkit-linear-gradient(bottom, #850026, #e75120);
@@ -186,7 +191,7 @@ form .btn .btn-layer {
 }
 
 form .btn:hover .btn-layer {
-    left: 0;
+    color: #d88a42;
 }
 
 form .btn input[type="submit"] {

@@ -8,10 +8,12 @@
 
     <!-- Reuse Header or Footer -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="icon" href="/img/" type="image/x-icon">
+    <link rel="icon" href="/img/logo.png">
+
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
@@ -78,35 +80,34 @@
                     <div class="form-inner">
                         <form action="#" class="login">
                             <div class="field">
-                                <input type="email" id="emailSignIn" name="emailSignIn" placeholder="Email Address" required>
+                                <input type="email" id="emailSignIn" name="emailSignIn" placeholder="Email" required>
                             </div>
                             <div class="field">
-                                <input type="password" id="pwdSignIn" name="passwordSignIn" placeholder="Password" required>
+                                <input type="password" id="pwdSignIn" name="passwordSignIn" placeholder="Mật khẩu" required>
                             </div>
                             <div class="pass-link">
                                 <a href="#">Quên mật khẩu?</a>
                             </div>
                             <div class="field btn">
-                                <div class="btn-layer"></div>
-                                <input type="submit" id="signIn" value="Đăn nhập">
+                                <div class="btn-layer" id="signIn">Đăng nhập</div>
+
                             </div>
                             <div class="signup-link">
-                                Chưa có tài khoản? <a href="">Signup now</a>
+                                Chưa có tài khoản? <a href="">Đăng ký ngay</a>
                             </div>
                         </form>
                         <form action="#" class="signup">
                             <div class="field">
-                                <input type="text" id="username" name="username" placeholder="User Name" required>
+                                <input type="text" id="username" name="username" placeholder="Tên đăng nhập" required>
                             </div>
                             <div class="field">
-                                <input type="email" id="email" name="email" placeholder="Email Address" required>
+                                <input type="email" id="email" name="email" placeholder="Email" required>
                             </div>
                             <div class="field">
-                                <input type="password" id="pwd" name="password" placeholder="Password" required>
+                                <input type="password" id="pwd" name="password" placeholder="Mật khẩu" required>
                             </div>
                             <div class="field btn">
-                                <div class="btn-layer"></div>
-                                <input type="submit" id="signUp" value="Đăng ký">
+                                <div class="btn-layer" id="signUp">Đăng ký</div>
                             </div>
                         </form>
                     </div>
@@ -160,10 +161,19 @@
     </script>
     <script type="module">
 
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"; import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js"; import { getDatabase } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
-        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"; const firebaseConfig = { apiKey: "AIzaSyAIwU6gd89NJnFH0sAJGzE1XwCv9wGPQXQ", authDomain: "freshie-uel.firebaseapp.com", databaseURL:
-        "https://freshie-uel-default-rtdb.firebaseio.com", projectId: "freshie-uel", storageBucket: "freshie-uel.appspot.com", messagingSenderId: "665183320448", appId: "1:665183320448:web:d35d7291577c7276d12965", measurementId: "G-N5D0L2ST2N" }; const
-        app = initializeApp(firebaseConfig); const analytics = getAnalytics(app); const database = getDatabase(app); const auth = getAuth(app); signUp.a
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"; import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js"; import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,updateProfile} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"; const firebaseConfig = { apiKey: "AIzaSyAIwU6gd89NJnFH0sAJGzE1XwCv9wGPQXQ", authDomain:
+        "freshie-uel.firebaseapp.com", databaseURL: "https://freshie-uel-default-rtdb.firebaseio.com", projectId: "freshie-uel", storageBucket: "freshie-uel.appspot.com", messagingSenderId: "665183320448", appId: "1:665183320448:web:d35d7291577c7276d12965",
+        measurementId: "G-N5D0L2ST2N" }; const app = initializeApp(firebaseConfig); const analytics = getAnalytics(app); const database = getDatabase(app); const auth = getAuth(app); signUp.addEventListener('click', (e) =>{ var email = document.getElementById("email").value.trim();
+        var password = document.getElementById("pwd").value; var username = document.getElementById("username").value; createUserWithEmailAndPassword(auth, email, password) .then((userCredential)=> { const user = userCredential.user; set(ref(database,'users/'+
+        user.uid),{username:username,email:email});updateProfile(auth.currentUser, { displayName: username }); alert(`Đăng ký thành công`); }) .catch((error) => { const errorCode = error.code; const errorMessage = error.message; alert(error.code); });});
+        signIn.addEventListener('click', (e) =>{ var email = document.getElementById("emailSignIn").value.trim();var password = document.getElementById("pwdSignIn").value; signInWithEmailAndPassword(auth, email, password) .then((userCredential) => { const
+        user = userCredential.user; localStorage.setItem('account',user.displayName);location.href='../index.html' }) .catch((error)=> { const errorCode = error.code; const errorMessage = error.message; alert(error.code); }); }); auth.onAuthStateChanged((user)=>
+        { if (user) { console.log(user) } else { } });
+
+
+
+
     </script>
 
 

@@ -11,7 +11,8 @@
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="icon" href=" https://img.icons8.com/ios-filled/50/000000/circled-w.png " />
+    <link rel="icon" href="/img/logo.png">
+
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
@@ -49,7 +50,8 @@
                             <h2>Lancôme</h2>
                         </div>
                         <div class="brand_des">
-                            <p>Ra đời như một món quà vô giá mà Đấng tối cao ban tặng, Lancôme chính là biểu tượng của một tình yêu bất diệt tôn thờ trân trọng nét đẹp của người phụ nữ một cách tinh tế và rất đỗi chân thành. Chính tình yêu to lớn ấy đã đưa thương hiệu Lancôme nhanh chóng vượt khỏi ranh giới nước Pháp, thực hiện sứ mệnh tôn vinh vẻ đẹp của hàng triệu phụ nữ trên toàn cầu.</p>
+                            <p>Ra đời như một món quà vô giá mà Đấng tối cao ban tặng, Lancôme chính là biểu tượng của một tình yêu bất diệt tôn thờ trân trọng nét đẹp của người phụ nữ một cách tinh tế và rất đỗi chân thành. Chính tình yêu to lớn ấy đã đưa
+                                thương hiệu Lancôme nhanh chóng vượt khỏi ranh giới nước Pháp, thực hiện sứ mệnh tôn vinh vẻ đẹp của hàng triệu phụ nữ trên toàn cầu.</p>
                         </div>
                     </div>
                 </div>
@@ -69,23 +71,23 @@
     </section>
 
 
-        <!-- Product Section Begin -->
-        <section class="product spad">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12" style="margin-top: 50px;">
-                        <ul class="filter__controls">
-                            <li class="active" data-filter="*">Sản phẩm nổi bật</li>
-                            <li data-filter=".new-arrivals">Sản phẩm mới</li>
-                            <li data-filter=".hot-sales">Khuyến mãi</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row product__filter" id="special">
+    <!-- Product Section Begin -->
+    <section class="product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12" style="margin-top: 50px;">
+                    <ul class="filter__controls">
+                        <li class="active" data-filter="*">Sản phẩm nổi bật</li>
+                        <li data-filter=".new-arrivals">Sản phẩm mới</li>
+                        <li data-filter=".hot-sales">Khuyến mãi</li>
+                    </ul>
                 </div>
             </div>
-        </section>
-        <!-- Product Section End -->
+            <div class="row product__filter" id="special">
+            </div>
+        </div>
+    </section>
+    <!-- Product Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer">
@@ -112,35 +114,35 @@
         });
     </script>
 
-<script>
-    var XMLHttp = new XMLHttpRequest();
-    var html = "";
-    var i;
-    var uri = "../json/ProductBrand.json";
-    let array;
-    XMLHttp.onreadystatechange = function(){
-        if (this.readyState == 4 & this.status == 200){
-            array = JSON.parse(this.responseText);
-            myFunction(array);
+    <script>
+        var XMLHttp = new XMLHttpRequest();
+        var html = "";
+        var i;
+        var uri = "../json/ProductBrand.json";
+        let array;
+        XMLHttp.onreadystatechange = function() {
+            if (this.readyState == 4 & this.status == 200) {
+                array = JSON.parse(this.responseText);
+                myFunction(array);
+            }
         }
-    }
-    XMLHttp.open("GET", uri, true);
-    XMLHttp.send();
+        XMLHttp.open("GET", uri, true);
+        XMLHttp.send();
 
-    function myFunction(array){
-        for(i = 0; i < array.Lancome.length; i++){
+        function myFunction(array) {
+            for (i = 0; i < array.Lancome.length; i++) {
+                var sp = array.Lancome[i];
+                html += "<div class='col-lg-4 col-md-6 col-sm-6'><div class='product__item'><div class='product__item__pic set-bg' data-setbg='../img/product/" + sp.prImage + "' onClick=detail(" + i + ") ><img style='display: block;' src='../img/product/" + sp.prImage + "'><ul style='margin-top: 70px;' class='product__hover'><li><a href='#'><img src='../img/icon/heart.png'><span>Yêu thích</span></a></li><li><a href='#'><img src='../img/icon/search.png'><span onClick=detail('+ i + ')>Chi tiết</span></a></li></ul></div><div  class='product__item__text'><h6>" + sp.prName + "</h6><a href='#' class='add-cart'>+ Thêm vào giỏ hàng</a><div class='rating'><i class='fa fa-star' ></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star-o'></i></div><h5>" + sp.prPrice + "đ</h5><div class='product__color__select'><label for='pc-4'><input type='radio' id='pc-4'></label><label class='active black' for='pc-5'><input type='radio' id='pc-5'></label><label class='grey' for='pc-6'><input type='radio' id='pc-6'></label></div></div></div></div>"
+            }
+            document.getElementById("special").innerHTML = html;
+        }
+
+        function detail(i) {
             var sp = array.Lancome[i];
-            html += "<div class='col-lg-4 col-md-6 col-sm-6'><div class='product__item'><div class='product__item__pic set-bg' data-setbg='../img/product/" + sp.prImage + "' onClick=detail(" + i + ") ><img style='display: block;' src='../img/product/" + sp.prImage + "'><ul style='margin-top: 70px;' class='product__hover'><li><a href='#'><img src='../img/icon/heart.png'><span>Yêu thích</span></a></li><li><a href='#'><img src='../img/icon/search.png'><span onClick=detail('+ i + ')>Chi tiết</span></a></li></ul></div><div  class='product__item__text'><h6>" + sp.prName + "</h6><a href='#' class='add-cart'>+ Thêm vào giỏ hàng</a><div class='rating'><i class='fa fa-star' ></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star-o'></i></div><h5>" + sp.prPrice + "đ</h5><div class='product__color__select'><label for='pc-4'><input type='radio' id='pc-4'></label><label class='active black' for='pc-5'><input type='radio' id='pc-5'></label><label class='grey' for='pc-6'><input type='radio' id='pc-6'></label></div></div></div></div>"        }
-        document.getElementById("special").innerHTML = html; 
-    }
-
-    function detail(i){
-        var sp = array.Lancome[i];
-        localStorage.setItem("data", JSON.stringify(sp));
-        location.href = "../src/shop-detail.html";
-    }
-
-</script>
+            localStorage.setItem("data", JSON.stringify(sp));
+            location.href = "../src/shop-detail.html";
+        }
+    </script>
 </body>
 
 </html>
