@@ -3344,7 +3344,7 @@
             
             .blog__details__pic img {
                 min-width: 100%;
-                border-radius: 5px;
+                border-radius: 0px;
             }
             
             .blog__details__share {
