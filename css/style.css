@@ -2079,7 +2079,7 @@
             }
             
             .hero-wrap.hero-wrap-2 .slider-text {
-                height: 300px;
+                height: 100%;
             }
             
             .hero-wrap.hero-wrap-2 .slider-text .bread {
@@ -2493,12 +2493,12 @@
             
             .testimonial__text {
                 text-align: center;
-                padding: 130px 150px 175px;
+                padding: 100px 120px 150px;
             }
             
             .testimonial__text span {
                 color: #e53637;
-                font-size: 72px;
+                font-size: 80px;
             }
             
             .testimonial__text p {
@@ -2543,7 +2543,7 @@
             }
             
             .testimonial__pic {
-                height: 600px;
+                height: 700px;
             }
             /*---------------------
   Counter
@@ -5080,29 +5080,9 @@
             }
             /*--------shop--------*/
             
-            .banner.shop {
-                background-image: url('/img/banner/banner_category.png');
-                background-size: cover;
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 30px;
-                background-position: center;
-                background-repeat: no-repeat;
-                height: 50vh;
-                width: 100%;
-            }
             
-            .banner2.shop {
-                background-image: url('/img/banner/banner_category_2.png');
-                background-size: cover;
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 30px;
-                background-position: center;
-                background-repeat: no-repeat;
-                height: 60vh;
-                width: 100%;
-            }
+            
+          
             /*----horizontal scrolling----*/
             
             .horizontal-scrolling {
@@ -5123,3 +5103,16 @@
                 font-size: 16px;
                 font-weight: 300;
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
