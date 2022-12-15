@@ -5103,6 +5103,7 @@
                 font-size: 16px;
                 font-weight: 300;
             }
+<<<<<<< Updated upstream
 
 
 
@@ -5116,3 +5117,43 @@
 
 
 
+=======
+            /* <!---signin----> */
+            
+            .user .row {
+                height: 80vh;
+                background-image: url('../img/banner/signin_BG.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            
+            .user .row .col-md-6 {
+                background-color: #16080c;
+                opacity: 0.8;
+            }
+            
+            .form {
+                width: 100%;
+                padding: 20px;
+                border-radius: 5px;
+                background: rgb(255, 255, 255);
+                box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+            }
+            
+            .user.title {
+                color: #ffffff;
+                font-size: 3rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                margin-top: 20%;
+                text-align: center;
+                word-spacing: 5px;
+                line-height: 1.5em;
+            }
+            /*-------------------------- my-account------------------- */
+            
+            .nav.flex-column.nav-pills.me-3 {
+                margin-top: 50px;
+            }
+>>>>>>> Stashed changes
