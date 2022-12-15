@@ -26,7 +26,7 @@
 
 </head>
 
-<body onload="loadHeader()">
+<body>
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
@@ -98,15 +98,11 @@
     <!-- Header Section End -->
 
     <script>
-        function loadHeader() {
-            alert("load header");
-            var user = localStorage.getItem('account');
-            if (user != null) {
-                html = '<img src="/img/icon/user.png" id="iconUser" alt="" style="height: 10%; width: 15%; "> ' + user;
-                document.getElementById('userName').innerHTML = html;
-                document.getElementById('cart-count-info').innerText = JSON.parse(localStorage.getItem('cart')).length
-
-            }
+        var user = localStorage.getItem('account');
+        if (user != null) {
+            html = '<img src="/img/icon/user.png" id="iconUser" alt="" style="height: 10%; width: 15%; "> ' + user;
+            document.getElementById('userName').innerHTML = html;
+            document.getElementById('cart-count-info').innerText = JSON.parse(localStorage.getItem('cart')).length
         }
     </script>
 
