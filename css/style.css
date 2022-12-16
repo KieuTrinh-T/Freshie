@@ -8,6 +8,10 @@
                 -webkit-font-smoothing: antialiased;
             }
             
+            main {
+                margin-bottom: 20px;
+            }
+            
             h1,
             h2,
             h3,
@@ -5137,4 +5141,9 @@
             
             .nav.flex-column.nav-pills.me-3 {
                 margin-top: 50px;
+            }
+            
+            .item.product__wishlist__item {
+                height: 200px;
+                padding: 10px;
             }
