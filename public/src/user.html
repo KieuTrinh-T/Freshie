@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Freshie | Tài khoản</title>
+
+    <!-- Reuse Header or Footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/logo.png">
+
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="../css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="../css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/styleSignin.css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header>
+        <div id="header"></div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Breadcrumb Section Begin -->
+
+    <!-- Breadcrumb Section End -->
+
+    <!-- User Section Begin -->
+    <section class="user">
+
+        <div class="row">
+            <div class="form col-md-6" style="padding: 30px;">
+                <div class="wrapper">
+                    <div class="title-text">
+                        <div class="title login">
+                            Đăng nhập
+                            <p id="inform"></p>
+                        </div>
+                        <div class="title signup">
+                            Đăng ký
+
+                        </div>
+                    </div>
+                    <div class="form-container">
+                        <div class="slide-controls">
+                            <input type="radio" name="slide" id="login" checked onclick="turnLogin()">
+                            <input type="radio" name="slide" id="signup" onclick="turnSignup()">
+                            <label for="login" class="slide login">Đăng nhập</label>
+                            <label for="signup" class="slide signup">Đăng ký</label>
+                            <div class="slider-tab"></div>
+                        </div>
+                        <div class="form-inner">
+                            <form action="#" class="login">
+                                <div class="field">
+                                    <input type="email" id="emailSignIn" name="emailSignIn" placeholder="Email" required>
+                                </div>
+                                <div class="field">
+                                    <input type="password" id="pwdSignIn" name="passwordSignIn" placeholder="Mật khẩu" required>
+                                </div>
+                                <div class="pass-link">
+                                    <a href="#">Quên mật khẩu?</a>
+                                </div>
+                                <div class="field btn">
+                                    <div class="btn-layer" id="signIn">Đăng nhập</div>
+
+                                </div>
+                                <div class="signup-link">
+                                    Chưa có tài khoản? <a href="">Đăng ký ngay</a>
+                                </div>
+                            </form>
+                            <form action="#" class="signup">
+                                <div class="field">
+                                    <input type="text" id="username" name="username" placeholder="Tên đăng nhập" required>
+                                </div>
+                                <div class="field">
+                                    <input type="email" id="email" name="email" placeholder="Email" required>
+                                </div>
+                                <div class="field">
+                                    <input type="password" id="pwd" name="password" placeholder="Mật khẩu" required>
+                                </div>
+                                <div class="field btn">
+                                    <div class="btn-layer" id="signUp">Đăng ký</div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2 class="user title">Chào mừng bạn đến với <br/>Freshie
+                </h2>
+                <p style="color: aliceblue;font-size: 1.2em; padding: 50px; text-align: center;">Hãy bắt đầu với việc tạo tài khoản và nhận được những ưu đãi bất ngờ từ Freshie </p>
+            </div>
+        </div>
+
+    </section>
+    <!-- User Section Begin -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div id="footer"></div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <script src="../js/jquery.nicescroll.min.js"></script>
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+    <script src="../js/jquery.countdown.min.js"></script>
+    <script src="../js/jquery.slicknav.js"></script>
+    <script src="../js/mixitup.min.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        $(function() {
+            $('#header').load('../src/reuseheader.html');
+            $('#footer').load('../src/reusefooter.html');
+        });
+    </script>
+    <script>
+        const loginText = document.querySelector(".title-text .login");
+        const loginForm = document.querySelector("form.login");
+        const loginBtn = document.querySelector("label.login");
+        const signupBtn = document.querySelector("label.signup");
+        const signupLink = document.querySelector("form .signup-link a");
+
+        function turnSignup() {
+            loginForm.style.marginLeft = "-50%";
+            loginText.style.marginLeft = "-50%";
+        };
+
+        function turnLogin() {
+            loginForm.style.marginLeft = "0%";
+            loginText.style.marginLeft = "0%";
+        };
+        signupLink.onclick = (() => {
+            signupBtn.click();
+            return false;
+        });
+    </script>
+    <script type="module">
+
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"; import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js"; import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,updateProfile} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"; const firebaseConfig = { apiKey: "AIzaSyAIwU6gd89NJnFH0sAJGzE1XwCv9wGPQXQ", authDomain:
+        "freshie-uel.firebaseapp.com", databaseURL: "https://freshie-uel-default-rtdb.firebaseio.com", projectId: "freshie-uel", storageBucket: "freshie-uel.appspot.com", messagingSenderId: "665183320448", appId: "1:665183320448:web:d35d7291577c7276d12965",
+        measurementId: "G-N5D0L2ST2N" }; const app = initializeApp(firebaseConfig); const analytics = getAnalytics(app); const database = getDatabase(app); const auth = getAuth(app); signUp.addEventListener('click', (e) =>{ var email = document.getElementById("email").value.trim();
+        var password = document.getElementById("pwd").value; var username = document.getElementById("username").value; createUserWithEmailAndPassword(auth, email, password) .then((userCredential)=> { const user = userCredential.user; set(ref(database,'users/'+
+        user.uid),{username:username,email:email});updateProfile(auth.currentUser, { displayName: username }); document.getElementById(`inform`).innerHTML=`Đăng ký thành công! Mời bạn đăng nhập`;turnLogin(); }) .catch((error) => { const errorCode = error.code;
+        const errorMessage = error.message; alert(error.code); });}); signIn.addEventListener('click', (e) =>{ var email = document.getElementById("emailSignIn").value.trim();var password = document.getElementById("pwdSignIn").value; signInWithEmailAndPassword(auth,
+        email, password) .then((userCredential)=> { const user = userCredential.user; if(user.displayName){localStorage.setItem('account',user.displayName)} else{localStorage.setItem('account',user.email)} ;location.href='../index.html' }) .catch((error)=>
+        { const errorCode = error.code; const errorMessage = error.message; alert(error.code); }); }); auth.onAuthStateChanged((user)=> { if (user) { console.log(user) } else { } });
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -5147,3 +5147,11 @@
                 height: 200px;
                 padding: 10px;
             }
+            
+            .sticky {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                background-color: #fff;
+                z-index: 1;
+            }
