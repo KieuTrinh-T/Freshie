@@ -923,6 +923,7 @@
             
             .categories__deal__countdown .categories__deal__countdown__timer .cd-item p {
                 margin-bottom: 0;
+                color: white;
             }
             /*---------------------
   Instagram
@@ -2543,7 +2544,7 @@
             }
             
             .testimonial__pic {
-                height: 700px;
+                height: 900px;
             }
             /*---------------------
   Counter
