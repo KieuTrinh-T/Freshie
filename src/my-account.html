@@ -139,7 +139,7 @@
                             <button class="nav-link" id="payment-method-tab" data-bs-toggle="tab" data-bs-target="#payment-method" type="button" role="tab" aria-controls="payment-method" aria-selected="false">Phương thức thanh toán</button>
                             <button class="nav-link" id="address-edit-tab" data-bs-toggle="tab" data-bs-target="#address-edit" type="button" role="tab" aria-controls="address-edit" aria-selected="false">Địa chỉ</button>
                             <button class="nav-link" id="account-info-tab" data-bs-toggle="tab" data-bs-target="#account-info" type="button" role="tab" aria-controls="account-info" aria-selected="false">Cài đặt tài khoản</button>
-                            <button class="nav-link" onclick="logout()" type="button">Đăng xuất</button>
+                            <button class="nav-link" id="logout" type="button">Đăng xuất</button>
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-8">
@@ -337,18 +337,19 @@
             if (user != null) {
 
                 document.getElementById('AccountName').innerHTML = 'Xin chào <strong >' + user + '</strong>';
+            } else {
+                location.href = "user.html";
             }
         })
     </script>
     <script>
     </script>
     <script type="module">
-
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"; import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js"; import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
         import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,updateProfile} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"; const firebaseConfig = { apiKey: "AIzaSyAIwU6gd89NJnFH0sAJGzE1XwCv9wGPQXQ", authDomain:
         "freshie-uel.firebaseapp.com", databaseURL: "https://freshie-uel-default-rtdb.firebaseio.com", projectId: "freshie-uel", storageBucket: "freshie-uel.appspot.com", messagingSenderId: "665183320448", appId: "1:665183320448:web:d35d7291577c7276d12965",
-        measurementId: "G-N5D0L2ST2N" }; const app = initializeApp(firebaseConfig); const analytics = getAnalytics(app); const database = getDatabase(app); const auth = getAuth(app); function logout(){alert("click"), auth.signOut();localStorage.removeItem('account');
-        window.location.href = "../index.html";}
+        measurementId: "G-N5D0L2ST2N" }; const app = initializeApp(firebaseConfig); const analytics = getAnalytics(app); const database = getDatabase(app); const auth = getAuth(app); logout.addEventListener('click', (e) =>{alert("Đã đăng xuất"), auth.signOut();localStorage.removeItem('account');localStorage.removeItem('cart');
+        window.location.href = "user.html";})
 
 
 
