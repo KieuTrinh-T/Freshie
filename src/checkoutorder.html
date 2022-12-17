@@ -290,6 +290,8 @@
 
         function Finish() {
             alert("Đơn hàng của bạn đã đặt thành công!")
+            localStorage.removeItem('cart')
+            window.location.href = "../index.html"
         }
     </script>
 

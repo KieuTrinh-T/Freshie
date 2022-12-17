@@ -67,12 +67,19 @@
                             </li>
                             <li id="collection"><a href="#">Thương hiệu</a>
                                 <ul class="dropdown">
-                                    <li id="modern-house"><a href="../src/brand-gucci.html">GUCCI</a></li>
-                                    <li id="seasonal"><a href="../src/brand-lancome.html">Lancôme</a></li>
-                                    <li id="special"><a href="../src/brand-estee.html">Estée Lauder</a></li>
+
+                                    <li><a href="../src/brand-gucci.html">GUCCI</a></li>
+                                    <li><a href="../src/brand-estee.html">Estée Lauder</a></li>
+                                    <li><a href="../src/brand-lancome.html">Lancôme</a></li>
                                 </ul>
                             </li>
-                            <li id="about"><a href="../src/about.html">Giới thiệu</a></li>
+                            <li id="about"><a href="../src/about.html">Giới thiệu</a>
+                                <ul class="dropdown">
+                                    <li><a href="../src/about.html">Về Freshie</a></li>
+                                    <li><a href="../src/blog-details.html">Blog</a></li>
+
+                                </ul>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -94,7 +101,21 @@
             </div>
             <div class="canvas__open"><i class="fa fa-bars"></i></div>
         </div>
+        <div style="height: 2px;background-color: aliceblue;"></div>
     </header>
+
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center-1 justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input class="searchbar" type="text" id="search-input" placeholder="Tìm kiếm sản phẩm...">
+                <div class="search-results">
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <!-- Search End -->
     <!-- Header Section End -->
 
     <script>
@@ -171,7 +192,7 @@
             if (search.length > 0) {
                 for (let i = 0; i < myArr.length; i++) {
                     if (myArr[i].prName.toLocaleLowerCase().includes(search.toLocaleLowerCase())) {
-                        selectElement('.search-results').innerHTML += '<div class="search-product" onClick=details(' + i + ')><div class="search-product-pic"><img src="' + myArr[i].prImage + '"></div><div class="search-product-text"><h6>' + myArr[i].prName + '</h6><span>' + myArr[i].prPrice + ' đ</span></div></div>'
+                        selectElement('.search-results').innerHTML += '<div class="search-product" onClick=details(' + i + ')><div class="search-product-pic"><img src="/img/product/' + myArr[i].prImage + '"></div><div class="search-product-text"><h6>' + myArr[i].prName + '</h6><span>' + myArr[i].prPrice + ' đ</span></div></div>'
                     }
                 }
             }
